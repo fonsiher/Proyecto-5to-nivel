@@ -1,5 +1,13 @@
 # Proyecto-5to-nivel
-Para la realización y prueba del código mostrado en el repositorio se utilizo el IDE Eclipse, y el Servidor web Wildfly, Versión 12.0.0
+### Pre-requisitos 📋
+Para la realización y prueba del código mostrado en el repositorio se utilizó:
+<ul>
+  <li>Java JDK 1.8</li>
+  <li>IDE Eclipse</li>
+  <li>Servidor web Wildfly, Versión 12.0.0</li>
+</ul>
+Si desea editar, modificar y ejecutar el código del repositorio necesitará disponer de las herramientas listadas. <br/>
+### Instalación 🔧
 <h4>Instalación del Java SE Development Kit</h4>
 <p>Para trabajar con Java en el IDE, es necesario la Instalación del Java JDK <br/>
 Si ya lo tienes instaldo pasa al siguiente punto.</p>
