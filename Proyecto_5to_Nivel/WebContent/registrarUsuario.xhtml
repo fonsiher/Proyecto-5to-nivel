@@ -3,7 +3,52 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<title>Iniciar Sesión</title>
+	<link rel="stylesheet" href="../estilos/IniciarSesion.css" type="text/css" />
 
-	<ui:composition template="">
-	</ui:composition>
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
+</head>
+<body>
+<div id="cabecera" class="cabecera">
+		<center>
+			<nav>
+			<ul>
+				<li><a href="index.xhtml">INICIO</a></li>
+				<li><a href="repositorio.xhtml">REPOSITORIO</a></li>
+				<li><a href="informacion.xhtml">INFORMACION</a></li>
+				<li><a href="contacto.xhtml">CONTÁCTANOS</a></li>
+				<li><a href="registrarUsuario.xhtml">REGÍSTRATE</a></li>
+				<li><a href="login.xhtml">LOGIN</a></li>
+			</ul>
+			</nav>
+		</center>
+		</div>
+	<form action="VerificarIniciarSesion.jsp" method="post">
+		<div class="login-box">
+			<img src="imagenes/sin.png" class="avatar animated infinite pulse faster" alt="Avatar Image" />
+				<h1 class="animated infinite zoomIn slower">Iniciar Sesion</h1> 
+				<label for="name">Nombre</label> 
+				<input type="text" name="nombre" placeholder="Ingrese el Nombre" /> 
+				<label for="lastname">Apellido</label>
+				<input type="text" name="apellido" placeholder="Ingrese el Apellido" />
+				<label for="ci">Cedula</label> 
+				<input type="text" name="cedula" placeholder="Ingrese la Cedula" /> 
+				<label for="username">Correo</label> 
+				<input type="text" name="usuario" placeholder="Ingrese el Usuario" /> 
+				<label for="password">Clave</label>
+				<input type="password" name="clave" placeholder="Ingrese la Contraseña" /> 
+					<input type="submit" value="Iniciar" /> 
+					<a href="index.xhtml">Página Principal</a>
+		</div>
+	</form>
+		<div id="pie" class="footer">
+		<b>Data Report EC 2020</b>
+		<img src="imagenes/licencia.png" align="top"
+			style="width: 90px; height: 25px;" /> <a href="repositorio.xhtml">Más
+			Información</a> <br /> <b>Licencia: </b>CC-BY-NC-SA <b> Autores:</b>
+		por: Richard Camacho - Edwin Hernández - Alisson Vizcaíno.
+	</div>
+	</body>
 </html>
