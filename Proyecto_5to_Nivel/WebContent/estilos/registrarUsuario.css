@@ -1,9 +1,25 @@
-@charset "ISO-8859-1";body {
+@charset "ISO-8859-1";
+body {
 	margin: 0;
 	padding: 0;
 	background-color: #008080;
 	font-family: sans-serif;
 	height: 100vh;
+	font-family: Arial;
+	/*background-color: #f2f2f2;*/
+	padding: 0px !important;
+	margin: 0px !important;
+
+
+	/*background: rgba(147,206,222,1);
+background: -moz-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+background: -webkit-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -o-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: -ms-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+background: linear-gradient(to bottom, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=0 );*/
+	
 }
 
 .login-box {
@@ -11,7 +27,7 @@
 	height: 610px;
 	background: white;
 	color: #000000;
-	top: 50%;
+	top: 62%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -117,6 +133,22 @@
 	font-size: 25pt;
 }
 
+.cabecera {
+	width: 100%;
+	height: 220px;
+	background-color: #AAFFDF;
+	text-align: center;
+	padding-top: 15px;
+	font-family: cursive; font-size : 25pt;
+	font-weight: 600;
+	box-shadow: rgba(0, 0, 0, .25) 0px 5px 5px;
+	left: 10;
+	top: 0;
+	position: fixed;
+	z-index: 50;
+	font-size: 25pt;
+}
+
 .footer {
 	width: 100%;
 	height: 40px;
@@ -137,7 +169,7 @@
 .cuerpo {
 	text-align: justify;
 	padding: 40px;
-	background-color: white;
+	background-color: blue;
 	font-family: "Constantia", serif;
 	font-size: 135%;
 }
@@ -296,4 +328,5 @@ nav ul li a:hover {
 .sinbordes tr, .sinbordes td {
 	border: none !important;
 	background-color: transparent !important;
+}
 }
