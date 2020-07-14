@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15946914937930" configfile="/Proyecto_5to_Nivel/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="390" y="183" id="pf15946915743541" outlinks="pf15946915743542" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="MenuAdministrador.xhtml" x="624" y="183" id="pf15946915743543" inlinks="pf15946915743542" path="/MenuAdministrador.xhtml"/>
+  <links id="pf15946915743542" target="pf15946915743543" source="pf15946915743541" outcome="menadmin"/>
+</pageflow:Pageflow>
