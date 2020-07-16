@@ -32,6 +32,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', end
 		endColorstr='#49a5bf', GradientType=0);
 }
 
+#personas{
+	background-color: black;
+	font-size:24px;
+}
+
 .main {
 	-moz-flex-grow: 1;
 	-webkit-flex-grow: 1;
