@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#listadoUsuarios.xhtml"
+  PATH="/listadoUsuarios.xhtml" SHAPE="384,840,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#listadoUsuarios.xhtml:0" NAME="item"
+   PATH="/listadoUsuarios.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="editar_user::#cambioContra.xhtml"
+    NAME="output" PATH="/cambioContra.xhtml"
+    TARGET="rules:#cambioContra.xhtml" TITLE="editar_user" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#cambioContra.xhtml"
+  PATH="/cambioContra.xhtml" SHAPE="576,864,50,25" model-entity="JSFProcessGroup"/>
+</PROCESS>
