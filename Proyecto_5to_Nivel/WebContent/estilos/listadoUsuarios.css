@@ -1,15 +1,11 @@
 @charset "ISO-8859-1";
-body {
-	margin: 0;
-	padding: 0;
-	background-color: #008080;
-	font-family: sans-serif;
-	height: 100vh;
+html, body {
 	font-family: Arial;
 	/*background-color: #f2f2f2;*/
 	padding: 0px !important;
 	margin: 0px !important;
-
+	padding-top: 80px !important;
+	min-height: 100%;
 	/*background: rgba(147,206,222,1);
 background: -moz-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
@@ -18,85 +14,22 @@ background: -o-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 
 background: -ms-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
 background: linear-gradient(to bottom, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=0 );*/
-}
-
-.login-box {
-	width: 320px;
-	height: 610px;
-	background: white;
-	color: #000000;
-	top: 62%;
-	left: 50%;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	box-sizing: border-box;
-	padding: 70px 30px;
-	border-radius: 3%;
-}
-
-.login-box .avatar {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	position: absolute;
-	top: -50px;
-	left: calc(50% - 50px);
-}
-
-.login-box h1 {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	font-size: 22px;
-}
-
-.login-box label {
-	margin: 0;
-	padding: 0 0 2px;
-	font-weight: bold;
-	display: block;
-}
-
-.login-box input {
-	width: 100%;
-	margin-bottom: 10px;
-}
-
-.login-box input[type="text"], .login-box input[type="password"] {
-	border: none;
-	border-bottom: 1px solid #fff;
-	background: transparent;
-	outline: none;
-	height: 40px;
-	color: #000000;
-	font-size: 16px;
-}
-
-.login-box input[type="submit"] {
-	border: none;
-	outline: none;
-	height: 40px;
-	background: #b80f22;
-	color: #fff;
-	font-size: 18px;
-	border-radius: 20px;
-}
-
-.login-box input[type="submit"]:hover {
-	cursor: pointer;
-	background: #ffc107;
-	color: #000;
-}
-
-.login-box a {
-	text-decoration: none;
-	font-size: 12px;
-	line-height: 20px;
-	color: darkgrey;
-}
-
-.login-box a:hover {
-	color: #000000;
+	background: rgba(198, 233, 242, 1);
+	background: -moz-linear-gradient(top, rgba(198, 233, 242, 1) 0%,
+		rgba(117, 189, 209, 1) 55%, rgba(73, 165, 191, 1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(198, 233,
+		242, 1)), color-stop(55%, rgba(117, 189, 209, 1)),
+		color-stop(100%, rgba(73, 165, 191, 1)));
+	background: -webkit-linear-gradient(top, rgba(198, 233, 242, 1) 0%,
+		rgba(117, 189, 209, 1) 55%, rgba(73, 165, 191, 1) 100%);
+	background: -o-linear-gradient(top, rgba(198, 233, 242, 1) 0%,
+		rgba(117, 189, 209, 1) 55%, rgba(73, 165, 191, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(198, 233, 242, 1) 0%,
+		rgba(117, 189, 209, 1) 55%, rgba(73, 165, 191, 1) 100%);
+	background: linear-gradient(to bottom, rgba(198, 233, 242, 1) 0%,
+		rgba(117, 189, 209, 1) 55%, rgba(73, 165, 191, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e9f2',
+		endColorstr='#49a5bf', GradientType=0);
 }
 
 .main {
@@ -118,29 +51,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', end
 
 .cabecera {
 	width: 100%;
-	height: 70px;
-	background-color: #AAFFDF;
-	text-align: center;
-	padding-top: 15px;
-	font-family: cursive;
-	font-size: 25pt;
-	font-weight: 600;
-	box-shadow: rgba(0, 0, 0, .25) 0px 5px 5px;
-	left: 10;
-	top: 0;
-	position: fixed;
-	z-index: 50;
-	font-size: 25pt;
-}
-
-.cabecera {
-	width: 100%;
 	height: 220px;
 	background-color: #AAFFDF;
 	text-align: center;
 	padding-top: 15px;
-	font-family: cursive;
-	font-size: 25pt;
+	font-family: cursive; font-size : 25pt;
 	font-weight: 600;
 	box-shadow: rgba(0, 0, 0, .25) 0px 5px 5px;
 	left: 10;
@@ -170,21 +85,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', end
 .cuerpo {
 	text-align: justify;
 	padding: 40px;
-	background-color: blue;
+	background-color: white;
 	font-family: "Constantia", serif;
 	font-size: 135%;
 }
 
-.tabla {
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-	font-size: 20px;
-	margin: 40px;
-	width: 480px;
-	text-align: left;
-	border-collapse: collapse;
-}
+
 
 th {
+	width: 200px;
 	font-size: 10px;
 	font-weight: normal;
 	text-align: center;
@@ -197,6 +106,7 @@ th {
 }
 
 td {
+	width: 200px;
 	padding: 3px;
 	background: #b9c9fe;
 	border-bottom: 1px solid #fff;
@@ -209,6 +119,9 @@ tr:hover td {
 	background: #d0dafd;
 	color: #339;
 }
+
+
+
 
 /*.tabla2 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -245,6 +158,8 @@ tr:hover td {
 	background: #b9fea5;
 	color: #339;
 }*/
+
+
 nav {
 	/*Bordes redondeados*/
 	-webkit-border-radius: 10px; /*Para chrome y Safari*/
@@ -323,5 +238,4 @@ nav ul li a:hover {
 .sinbordes tr, .sinbordes td {
 	border: none !important;
 	background-color: transparent !important;
-}
 }

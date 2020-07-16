@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
 <head>
-<link rel="StyleSheet" href="estilos/estilo.css" type="text/css" />
+<link rel="StyleSheet" href="estilos/listadoUsuarios.css" type="text/css" />
 <title>Licencia</title>
 
 </head>
@@ -21,7 +21,7 @@
 			<ul>
 				<li><a href="MenuAdministrador.xhtml">MENU PRINCIPAL</a></li>
 				<li><a href="addUsuario.xhtml">AGREGAR USUARIOS</a></li>
-				<li><a href="listadoUsuarios.xhtml">VER USUARIOS</a></li>
+				<li><a href="menuEdicion.jsp">VER USUARIOS</a></li>
 				<li><a href="auditoria.xhtml">VER DATOS DE AUDITORÍA</a></li>
 				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
 			</ul>
@@ -39,56 +39,58 @@
 			bgcolor="#1E679A">
 
 			<caption align="top">
-				<h3>Registro de acciones en la aplicación</h3>
+				<h3>Listado de Usuarios</h3>
 			</caption>
 
 			<tr>
 				<td><b>ID</b></td>
-				<td><b>Tabla</b></td>
-				<td><b>Operación</b></td>
-				<td><b>Valor Anterior</b></td>
-				<td><b>Valor Nuevo</b></td>
-				<td><b>Fecha</b></td>
-				<td><b>Usuario</b></td>
+				<td><b>Nombre</b></td>
+				<td><b>Apellido</b></td>
+				<td><b>Cedula</b></td>
+				<td><b>Correo</b></td>
+				<td><b>Clave Cifrada</b></td>
+				<td colspan="2"><b>Acciones</b></td>
 			</tr>
 
 			<tr>
 				<td>1</td>
-				<td>tb_usuario</td>
-				<td>Update</td>
-				<td>1234</td>
-				<td>cambio123</td>
-				<td>2020-07-13</td>
-				<td>María Moya</td>
+				<td>Richard</td>
+				<td>Camacho</td>
+				<td>1724053275</td>
+				<td>rcamachoc@est.ups.edu.ec</td>
+				<td>Hhjkh63555HGJBK55545</td>
+				<td style="width:55px"><a href="cambioContraseña.xhtml">Editar_Clave</a></td>
+				<td><a href="#">Bloquear</a></td>
 			</tr>
 
 			<tr>
 				<td>2</td>
-				<td>tb_area</td>
-				<td>Insert</td>
-				<td></td>
-				<td>No asignada</td>
-				<td>2020-07-13</td>
-				<td>Edwin Hernández</td>
+				<td>Edwin</td>
+				<td>Hernandez</td>
+				<td>1111111111</td>
+				<td>ehernadezm@est.ups.edu.ec</td>
+				<td>labdnfi555HGJBK55545</td>
+				<td style="width:55px"><a href="cambioContraseña.xhtml">Editar_Clave</a></td>
+				<td><a href="#">Bloquear</a></td>
 			</tr>
 
 			<tr>
 				<td>3</td>
-				<td>Persona</td>
-				<td>Delete</td>
-				<td>Juan Perez</td>
-				<td></td>
-				<td>2020-07-13</td>
-				<td>Edwin Hernández</td>
+				<td>Alisson</td>
+				<td>Vizcaino</td>
+				<td>2222222222</td>
+				<td>avizcainoo@est.ups.edu.ec</td>
+				<td>plsaaai555HGJBK55545</td>
+				<td style="width:55px"><a href="cambioContraseña.xhtml">Editar_Clave</a></td>
+				<td><a href="#">Bloquear</a></td>
 			</tr>
 		</table>
-
 	</div>
 	<br></br>
 	<br></br>
 
 	<div align="center">
-		<a href="MenuAdministrador.xhtml"><button><h3>Volver al Inicio</h3></button></a>
+		<a href="	"><button><h3>Volver al Inicio</h3></button></a>
 	</div>
 	<br />
 	<br />
@@ -102,6 +104,4 @@
 		Alisson Vizcaíno.
 	</div>
 </body>
-
-
 </html>

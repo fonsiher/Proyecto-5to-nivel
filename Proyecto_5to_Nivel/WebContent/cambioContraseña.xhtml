@@ -3,19 +3,14 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
-
-	<head>
-
-<title>Añadir Usuario</title>
-
-	<link rel="stylesheet" href="../estilos/registrarUsuario.css" type="text/css" />
-	
-
+<head>
+<title>Actualizacion de datos</title>
+	<link rel="stylesheet" href="../estilos/cambioContraseña.css" type="text/css" />
 		<link rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
 </head>
 <body>
-<div id="cabecera" class="cabecera">
+	<div id="cabecera" class="cabecera">
 		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
 			align="left" />
 		<div style="height: 80px;">
@@ -27,7 +22,7 @@
 			<ul>
 				<li><a href="MenuAdministrador.xhtml">MENU PRINCIPAL</a></li>
 				<li><a href="addUsuario.xhtml">AGREGAR USUARIOS</a></li>
-					<li><a href="listadoUsuarios.xhtml">VER USUARIOS</a></li>
+					<li><a href="menuEdicion.jsp">VER USUARIOS</a></li>
 					<li><a href="auditoria.xhtml">VER DATOS DE AUDITORÍA</a></li>
 					<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
 			</ul>
@@ -37,27 +32,16 @@
 	<form action="VerificarIniciarSesion.jsp" method="post">
 		<div class="login-box">
 			<img src="imagenes/sin.png" class="avatar animated infinite pulse faster" alt="Avatar Image" />
-				<h1 class="animated infinite zoomIn slower">Agregar Nuevo Usuario</h1> 
-				<label for="name">Nombre</label> 
-				<input type="text" name="nombre" placeholder="Ingrese el Nombre" /> 
-				<label for="lastname">Apellido</label>
-				<input type="text" name="apellido" placeholder="Ingrese el Apellido" />
-				<label for="ci">Cedula</label> 
-				<input type="text" name="cedula" placeholder="Ingrese la Cedula" /> 
-				<label for="username">Correo</label> 
-				<input type="text" name="usuario" placeholder="Ingrese el Usuario" /> 
-				<label for="password">Clave</label>
-				<input type="password" name="clave" placeholder="Ingrese la Contraseña" />
+				<h1 class="animated infinite zoomIn slower">Cambio de Contraseña</h1> 
+				<label for="vpassword">Ingrese la Contraseña Actual</label>
+				<input type="password" name="vclave" placeholder="Ultima Clave" />
+				<label for="npassword">Ingrese la Nueva Clave</label>
+				<input type="password" name="nclave" placeholder="ejemplo: Xrrp1370" /> 
 				<label for="passwordconf">Confirmar Clave</label>
-				<input type="password" name="clave" placeholder="Confirme la Contraseña" />  
-					<input type="submit" value="Guardar" /> 
-					<a href="MenuAdministrador.xhtml">Volver al Menú</a>
+				<input type="password" name="cclave" placeholder="Confirmar Clave" /> 
+					<input type="submit" value="Guardar Cambios" /> 
+					<a href="MenuAdministrador.xhtml">Página Principal</a>
 		</div>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
 	</form>
 		<div id="pie" class="footer">
 		<b>Data Report EC 2020</b>

@@ -1,4 +1,5 @@
 @charset "ISO-8859-1";
+
 body {
 	margin: 0;
 	padding: 0;
@@ -22,10 +23,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', end
 
 .login-box {
 	width: 320px;
-	height: 610px;
+	height: 450px;
 	background: white;
 	color: #000000;
-	top: 62%;
+	top: 55%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -45,14 +46,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', end
 
 .login-box h1 {
 	margin: 0;
-	padding: 0;
+	padding: 10px;
 	text-align: center;
 	font-size: 22px;
 }
 
 .login-box label {
 	margin: 0;
-	padding: 0 0 2px;
+	padding: 0 0 5px;
 	font-weight: bold;
 	display: block;
 }
