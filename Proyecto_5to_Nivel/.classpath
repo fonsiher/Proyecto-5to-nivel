@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Users/richa/OneDrive/Escritorio/primefaces-7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Usuario/eclipse-workspace/loginJSF/WebContent/WEB-INF/lib/postgresql-9.1-901.jdbc3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

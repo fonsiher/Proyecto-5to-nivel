@@ -1,16 +1,155 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<faces-config
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
-    version="2.3">
-	<navigation-rule>
-		<display-name>login.xhtml</display-name>
-		<from-view-id>/login.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>menadmin</from-outcome>
-			<to-view-id>/MenuAdministrador.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>no</from-outcome>
+            <to-view-id>/fallo.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>2</from-outcome>
+            <to-view-id>/Profesor.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>3</from-outcome>
+            <to-view-id>/Estudiante.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>1</from-outcome>
+            <to-view-id>/Administrador.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/fallo.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <managed-bean>
+        <managed-bean-name>beanIngreso1</managed-bean-name>
+        <managed-bean-class>baen.BeanIngreso1</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <managed-bean>
+        <managed-bean-name>beanIngreso11</managed-bean-name>
+        <managed-bean-class>baen.BeanIngreso1</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
+    <navigation-rule>
+        <from-view-id>/Administrador.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina1</from-outcome>
+            <to-view-id>/IngresoAlumnos.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina2</from-outcome>
+            <to-view-id>/IngresoProfesores.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina3</from-outcome>
+            <to-view-id>/IngresoMateria.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina4</from-outcome>
+            <to-view-id>/MateriaEstudiante.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina5</from-outcome>
+            <to-view-id>/AsignarProfesor.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Estudiante.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina1</from-outcome>
+            <to-view-id>/Notas.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Profesor.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina1</from-outcome>
+            <to-view-id>/IngresoCalificaciones.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>pagina2</from-outcome>
+            <to-view-id>/Materias.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/IngresoProfesores.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return admi</from-outcome>
+            <to-view-id>/Administrador.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/IngresoAlumnos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return admi</from-outcome>
+            <to-view-id>/Administrador.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/IngresoMateria.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return admi</from-outcome>
+            <to-view-id>/Administrador.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/MateriaEstudiante.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return admi</from-outcome>
+            <to-view-id>/Administrador.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/AsignarProfesor.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/Administrador.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>Return admi</from-outcome>
+            <to-view-id>/Administrador.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Notas.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return est</from-outcome>
+            <to-view-id>/Estudiante.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/IngresoCalificaciones.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return prof</from-outcome>
+            <to-view-id>/Profesor.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Materias.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>Return prof</from-outcome>
+            <to-view-id>/Profesor.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
