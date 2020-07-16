@@ -1,26 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <head>
 
 <title>Registro</title>
 
-	<link rel="stylesheet" href="../estilos/registrarUsuario.css" type="text/css" />
-	
+<link rel="stylesheet" href="../estilos/registrarUsuario.css"
+	type="text/css" />
 
-		<link rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" type="text/css" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+	type="text/css" />
 </head>
 <body>
-<div id="cabecera" class="cabecera">
+	<div id="cabecera" class="cabecera">
 		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
 			align="left" />
 		<div style="height: 80px;">
-		Data Report EC<br />
-			Estadística de Nacimientos en el Ecuador<br />
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
 		</div>
 		<center>
 			<nav>
@@ -35,57 +36,43 @@
 			</nav>
 		</center>
 	</div>
-	<form >
+	<form>
 		<div class="login-box">
-			<img src="imagenes/sin.png" class="avatar animated infinite pulse faster" alt="Avatar Image" />
-				<h1 class="animated infinite zoomIn slower">Registrar Usuario</h1> 
-				<label for="name">Nombre</label> 
-
-				<h:inputText type="text" id="nombre" value="#{beanRegistroPersona.nombre}" pt:placeholder="Ingrese el Nombre"></h:inputText> 
-
-				<h:inputText id="nombre" value="#{beanRegistroPersona.nombre}"></h:inputText> 
-
-				<label for="lastname">Apellido</label>
-
-				<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}" pt:placeholder="Ingrese el Apellido"></h:inputText>
-
-				<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}"></h:inputText>
-
-				<label for="ci">Cedula</label> 
-
-				<h:inputText id="doc_identidad" value="#{beanRegistroPersona.doc_identidad}" pt:placeholder="Ingrese la Cedula"></h:inputText>
-
-				<h:inputText id="doc_identidad" value="#{beanRegistroPersona.doc_identidad}"></h:inputText>
-
-				<label for="username">Correo</label> 
-
-				<h:inputText id="correo_electronico" value="#{beanRegistroPersona.correo_electronico}" pt:placeholder="Ingrese el Correo"></h:inputText>
-
-				<h:inputText id="correo_electronico" value="#{beanRegistroPersona.correo_electronico}"></h:inputText>
-
-				<label for="password">Clave</label>
-
-				<h:inputSecret  id="clave" value="" pt:placeholder="Ingrese Clave"></h:inputSecret>
-
-				<h:inputSecret  type="password" id="clave" value=""></h:inputSecret>
-
-				<label for="passwordconf">Confirmar Clave</label>
-
-				<h:inputSecret  id="clave2" value="" pt:placeholder="Confirme la contraseña"></h:inputSecret> 
-
-				<h:inputSecret type="password" id="clave2" value=""></h:inputSecret> 
-
-				<h:commandButton  value="Guardar" action="#{beanRegistroPersona.almaceneDatosPersona()}">
-				</h:commandButton>
-					<a href="index.xhtml">Página Principal</a>
+			<img src="imagenes/sin.png"
+				class="avatar animated infinite pulse faster" alt="Avatar Image" />
+			<h1 class="animated infinite zoomIn slower">Registrar Usuario</h1>
+			<label for="name">Nombre</label>
+			<h:inputText type="text" id="nombre"
+				value="#{beanRegistroPersona.nombre}"
+				pt:placeholder="Ingrese el Nombre"></h:inputText>
+			<label for="lastname">Apellido</label>
+			<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}"
+				pt:placeholder="Ingrese el Apellido"></h:inputText>
+			<label for="ci">Cedula</label>
+			<h:inputText id="doc_identidad"
+				value="#{beanRegistroPersona.doc_identidad}"
+				pt:placeholder="Ingrese la Cedula"></h:inputText>
+			<label for="username">Correo</label>
+			<h:inputText id="correo_electronico"
+				value="#{beanRegistroPersona.correo_electronico}"
+				pt:placeholder="Ingrese el Correo"></h:inputText>
+			<label for="password">Clave</label>
+			<h:inputSecret id="clave" value="" pt:placeholder="Ingrese Clave"></h:inputSecret>
+			<label for="passwordconf">Confirmar Clave</label>
+			<h:inputSecret id="clave2" value=""
+				pt:placeholder="Confirme la contraseña"></h:inputSecret>
+			<h:commandButton value="Guardar"
+				action="#{beanRegistroPersona.almaceneDatosPersona()}">
+			</h:commandButton>
+			<a href="index.xhtml">Página Principal</a>
 		</div>
 	</form>
-		<div id="pie" class="footer">
-		<b>Data Report EC 2020</b>
-		<img src="imagenes/licencia.png" align="top"
-			style="width: 90px; height: 25px;" /> <a href="repositorio.xhtml">Más
-			Información</a> <br /> <b>Licencia: </b>CC-BY-NC-SA <b> Autores:</b>
-		por: Richard Camacho - Edwin Hernández - Alisson Vizcaíno.
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" /> <a
+			href="repositorio.xhtml">Más Información</a> <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> por: Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
 	</div>
-	</body>
+</body>
 </html>

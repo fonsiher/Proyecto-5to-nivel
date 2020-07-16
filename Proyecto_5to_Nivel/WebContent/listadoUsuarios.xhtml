@@ -22,7 +22,7 @@
 			<ul>
 				<li><a href="MenuAdministrador.xhtml">MENU PRINCIPAL</a></li>
 				<li><a href="addUsuario.xhtml">AGREGAR USUARIOS</a></li>
-				<li><a href="menuEdicion.jsp">VER USUARIOS</a></li>
+				<li><a href="listadoUsuarios.xhtml">VER USUARIOS</a></li>
 				<li><a href="auditoria.xhtml">VER DATOS DE AUDITORÍA</a></li>
 				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
 			</ul>
@@ -59,30 +59,23 @@
 					<f:facet name="header">Correo Electrónico</f:facet>    				
                                 #{listarUsuarios.correo_electronico}
                         </h:column>
-
 				<h:column>
 					<f:facet name="header">Tipo</f:facet>    				
                                 #{listarUsuarios.id_tipo}
                         </h:column>
-
 				<h:column>
 					<f:facet name="header">Editar</f:facet>
 					<h:commandButton
 						action="#{beanRegistroPersona.irEdicion()}"
 						value="Modificar" />
-
 				</h:column>
-
 				<h:column>
 					<f:facet name="header">Eliminar</f:facet>
 					<h:commandButton
 						action="#{beanIngresoEstudiante.EliminarDatosEstudiante(listarAlumnos)}"
 						value="Eliminar" />
-
 				</h:column>
-
 			</h:dataTable>
-		
 	</div>
 	<br></br>
 	<br></br>
