@@ -98,7 +98,7 @@ public class BeanRegistroPersona implements Serializable {
    }
 	
     public String irEdicion(){
-    return "editar user";
+    return "editar_user";
     } 
 	
 	
