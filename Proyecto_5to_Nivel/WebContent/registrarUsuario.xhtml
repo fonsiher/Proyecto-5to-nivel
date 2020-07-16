@@ -34,23 +34,24 @@
 			</nav>
 		</center>
 	</div>
-	<form action="VerificarIniciarSesion.jsp" method="post">
+	<form >
 		<div class="login-box">
 			<img src="imagenes/sin.png" class="avatar animated infinite pulse faster" alt="Avatar Image" />
 				<h1 class="animated infinite zoomIn slower">Registrar Usuario</h1> 
 				<label for="name">Nombre</label> 
-				<input type="text" name="nombre" placeholder="Ingrese el Nombre" /> 
+				<h:inputText id="nombre" value="#{beanRegistroPersona.nombre}"></h:inputText> 
 				<label for="lastname">Apellido</label>
-				<input type="text" name="apellido" placeholder="Ingrese el Apellido" />
+				<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}"></h:inputText>
 				<label for="ci">Cedula</label> 
-				<input type="text" name="cedula" placeholder="Ingrese la Cedula" /> 
+				<h:inputText id="doc_identidad" value="#{beanRegistroPersona.doc_identidad}"></h:inputText>
 				<label for="username">Correo</label> 
-				<input type="text" name="usuario" placeholder="Ingrese el Usuario" /> 
+				<h:inputText id="correo_electronico" value="#{beanRegistroPersona.correo_electronico}"></h:inputText>
 				<label for="password">Clave</label>
-				<input type="password" name="clave" placeholder="Ingrese la Contraseña" />
+				<h:inputSecret  type="password" id="clave" value=""></h:inputSecret>
 				<label for="passwordconf">Confirmar Clave</label>
-				<input type="password" name="clave" placeholder="Confirme la Contraseña" /> 
-					<input type="submit" value="Guardar" /> 
+				<h:inputSecret type="password" id="clave2" value=""></h:inputSecret> 
+				<h:commandButton  value="Guardar" action="#{beanRegistroPersona.almaceneDatosPersona()}">
+				</h:commandButton>
 					<a href="index.xhtml">Página Principal</a>
 		</div>
 	</form>

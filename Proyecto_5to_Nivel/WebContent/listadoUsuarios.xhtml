@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 <head>
-<link rel="StyleSheet" href="estilos/listadoUsuarios.css" type="text/css" />
-<title>Licencia</title>
+<link rel="StyleSheet" href="estilos/listadoUsuarios.css"
+	type="text/css" />
+<title>Listado Usuarios</title>
 
 </head>
 <body>
@@ -28,69 +29,68 @@
 			</nav>
 		</center>
 	</div>
+
 	<br />
 	<br />
 
 	<div align="center" style="font-size: 30px;">
 
 		<br></br> <br></br>
+		
+			<div align="center">
+				<h1>Listado de Usuarios</h1>
+			</div>
+			<h:dataTable id="personas"
+				value="#{beanRegistroPersona.listaPersona()}" var="listarUsuarios"
+				border="1">
+				<h:column>
+					<f:facet name="header">Nombre Usuario</f:facet>    				
+                                #{listarUsuarios.nombre}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Apellido Usuario</f:facet>    				
+                                #{listarUsuarios.apellido}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Cedula</f:facet>    				
+                                #{listarUsuarios.doc_identidad}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Correo Electrónico</f:facet>    				
+                                #{listarUsuarios.correo_electronico}
+                        </h:column>
 
-		<table style="width: 75%;" cellspacing="1" cellpadding="3" border="1"
-			bgcolor="#1E679A">
+				<h:column>
+					<f:facet name="header">Tipo</f:facet>    				
+                                #{listarUsuarios.id_tipo}
+                        </h:column>
 
-			<caption align="top">
-				<h3>Listado de Usuarios</h3>
-			</caption>
+				<h:column>
+					<f:facet name="header">Editar</f:facet>
+					<h:commandButton
+						action="#{beanRegistroPersona.irEdicion()}"
+						value="Modificar" />
 
-			<tr>
-				<td><b>ID</b></td>
-				<td><b>Nombre</b></td>
-				<td><b>Apellido</b></td>
-				<td><b>Cedula</b></td>
-				<td><b>Correo</b></td>
-				<td><b>Clave Cifrada</b></td>
-				<td colspan="2"><b>Acciones</b></td>
-			</tr>
+				</h:column>
 
-			<tr>
-				<td>1</td>
-				<td>Richard</td>
-				<td>Camacho</td>
-				<td>1724053275</td>
-				<td>rcamachoc@est.ups.edu.ec</td>
-				<td>Hhjkh63555HGJBK55545</td>
-				<td style="width:55px"><a href="cambioContraseña.xhtml">Editar_Clave</a></td>
-				<td><a href="#">Bloquear</a></td>
-			</tr>
+				<h:column>
+					<f:facet name="header">Eliminar</f:facet>
+					<h:commandButton
+						action="#{beanIngresoEstudiante.EliminarDatosEstudiante(listarAlumnos)}"
+						value="Eliminar" />
 
-			<tr>
-				<td>2</td>
-				<td>Edwin</td>
-				<td>Hernandez</td>
-				<td>1111111111</td>
-				<td>ehernadezm@est.ups.edu.ec</td>
-				<td>labdnfi555HGJBK55545</td>
-				<td style="width:55px"><a href="cambioContraseña.xhtml">Editar_Clave</a></td>
-				<td><a href="#">Bloquear</a></td>
-			</tr>
+				</h:column>
 
-			<tr>
-				<td>3</td>
-				<td>Alisson</td>
-				<td>Vizcaino</td>
-				<td>2222222222</td>
-				<td>avizcainoo@est.ups.edu.ec</td>
-				<td>plsaaai555HGJBK55545</td>
-				<td style="width:55px"><a href="cambioContraseña.xhtml">Editar_Clave</a></td>
-				<td><a href="#">Bloquear</a></td>
-			</tr>
-		</table>
+			</h:dataTable>
+		
 	</div>
 	<br></br>
 	<br></br>
 
 	<div align="center">
-		<a href="	"><button><h3>Volver al Inicio</h3></button></a>
+		<a href="MenuAdministrador.xhtml"><button>
+				<h3>Volver al Inicio</h3>
+			</button></a>
 	</div>
 	<br />
 	<br />
