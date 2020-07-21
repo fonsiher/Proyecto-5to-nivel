@@ -22,6 +22,7 @@ public class BeanRegistroPersona implements Serializable {
     private String apellido;
     private String doc_identidad;
     private String correo_electronico;
+    private String clave;
     private int id_tipo;
     private Persona persona = new Persona();
 	
@@ -69,6 +70,14 @@ public class BeanRegistroPersona implements Serializable {
 		this.correo_electronico = correo_electronico;
 	}
 
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
 	public int getId_tipo() {
 		return id_tipo;
 	}
@@ -86,10 +95,22 @@ public class BeanRegistroPersona implements Serializable {
 	}
 
 	
-	public void almaceneDatosPersona() throws SQLException{
+	public String almaceneDatosPersona() throws SQLException{
         int perfil = 2;
+        String respuesta= "";
         ControllerPersona controller =new ControllerPersona();
-        controller.enviaDatoEstudiante(id_persona,nombre,apellido,doc_identidad,correo_electronico,perfil);
+        try {
+        	controller.enviaDatoEstudiante(id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
+        	respuesta = "RegCor";
+        	
+        }catch(Exception e) {
+        	e.printStackTrace();
+        	respuesta = "no";
+        	
+        }
+      
+        
+		return respuesta;
     }
 	
 	public ArrayList<Persona> listaPersona() throws SQLException{

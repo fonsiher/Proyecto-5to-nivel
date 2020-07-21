@@ -36,7 +36,8 @@
 			</nav>
 		</center>
 	</div>
-	<form>
+	
+	<h:form>
 		<div class="login-box">
 			<img src="imagenes/sin.png"
 				class="avatar animated infinite pulse faster" alt="Avatar Image" />
@@ -57,16 +58,18 @@
 				value="#{beanRegistroPersona.correo_electronico}"
 				pt:placeholder="Ingrese el Correo"></h:inputText>
 			<label for="password">Clave</label>
-			<h:inputSecret id="clave" value="" pt:placeholder="Ingrese Clave"></h:inputSecret>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}" pt:placeholder="Ingrese Clave"></h:inputSecret>
 			<label for="passwordconf">Confirmar Clave</label>
-			<h:inputSecret id="clave2" value=""
+			<h:inputSecret id="clave2" value="#"
 				pt:placeholder="Confirme la contraseña"></h:inputSecret>
 			<h:commandButton value="Guardar"
-				action="#{beanRegistroPersona.almaceneDatosPersona()}">
+				actionListener="#{beanRegistroPersona.almaceneDatosPersona()}">
 			</h:commandButton>
+			<h:button type="reset">ayaya</h:button>
 			<a href="index.xhtml">Página Principal</a>
 		</div>
-	</form>
+		
+	</h:form>
 	<div id="pie" class="footer">
 		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
 			align="top" style="width: 90px; height: 25px;" /> <a

@@ -1,23 +1,38 @@
 package model;
 
-public class Persona {
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import model.Persona;
+import java.io.Serializable;
+
+
+@Named(value="persona")
+@SessionScoped
+
+public class Persona implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id_persona;
 	private String nombre;
     private String apellido;
     private String doc_identidad;
     private String correo_electronico;
+    private String clave;
     private int id_tipo;
     
     public Persona() {
     	
     }
     
-    public Persona(int id_persona,String nombre, String apellido, String doc_identidad, String correo, int id_tipo) {
+    public Persona(int id_persona,String nombre, String apellido, String doc_identidad, String correo, String clave, int id_tipo) {
     	this.id_persona = id_persona;
     	this.nombre= nombre;
     	this.apellido = apellido;
     	this.doc_identidad= doc_identidad;
     	this.correo_electronico = correo;
+    	this.clave=clave;
     	this.id_tipo = id_tipo;
     }
 
@@ -61,6 +76,14 @@ public class Persona {
 	public void setCorreo_electronico(String correo_electronico) {
 		this.correo_electronico = correo_electronico;
 	}
+	
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
 
 	public int getId_tipo() {
 		return id_tipo;
@@ -69,7 +92,4 @@ public class Persona {
 	public void setId_tipo(int id_tipo) {
 		this.id_tipo = id_tipo;
 	}
-    
-    
-
 }
