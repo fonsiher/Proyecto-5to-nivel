@@ -2,8 +2,13 @@
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15946914937930" configfile="/Proyecto_5to_Nivel/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="listadoUsuarios.xhtml" x="122" y="178" id="pf159487699150142" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf159487836663545" path="/listadoUsuarios.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="cambioContra.xhtml" x="338" y="178" id="pf159487836663546" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf159487836663545" path="/cambioContra.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="149" y="300" id="pf159487836663547" outlinks="pf159487836663548" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="MenuAdministrador.xhtml" x="323" y="300" id="pf159487836663549" inlinks="pf159487836663548" path="/MenuAdministrador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="149" y="300" id="pf159487836663547" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf159487836663548" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="MenuAdministrador.xhtml" x="323" y="300" id="pf159487836663549" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf159487836663548" path="/MenuAdministrador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrarUsuario.xhtml" x="576" y="468" id="pf15953055939130" inlinks="pf15953055939131" path="/registrarUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="RegistroCorrecto.xhtml" x="384" y="492" id="pf15953055939132" outlinks="pf15953055939131 pf15953055939133" path="/RegistroCorrecto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Error.xhtml" x="585" y="588" id="pf15953055939134" inlinks="pf15953055939133" path="/Error.xhtml"/>
   <links id="pf159487836663545" target="pf159487836663546" source="pf159487699150142" outcome="editar_user"/>
   <links id="pf159487836663548" target="pf159487836663549" source="pf159487836663547" outcome="menuadmin"/>
+  <links id="pf15953055939131" target="pf15953055939130" source="pf15953055939132" outcome="RegCor"/>
+  <links id="pf15953055939133" target="pf15953055939134" source="pf15953055939132" outcome="no"/>
 </pageflow:Pageflow>

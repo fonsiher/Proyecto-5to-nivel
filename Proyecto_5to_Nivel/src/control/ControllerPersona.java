@@ -9,11 +9,11 @@ import model.Persona;
 
 public class ControllerPersona {
 
-	public void enviaDatoEstudiante(int id_persona, String nombre, String apellido, String doc_identidad, String correo,
+	public void enviaDatoEstudiante(int id_persona, String nombre, String apellido, String doc_identidad, String correo, String clave,
 			int id_tipo) throws SQLException {
 
 		DaoPersona daoAlumno = new DaoPersona();
-		daoAlumno.envioPersona(id_persona, nombre, apellido, doc_identidad, correo, id_tipo);
+		daoAlumno.envioPersona(id_persona, nombre, apellido, doc_identidad, correo, clave, id_tipo);
 	}
 	
 	
