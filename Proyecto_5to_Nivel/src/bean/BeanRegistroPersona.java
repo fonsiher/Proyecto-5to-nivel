@@ -97,21 +97,31 @@ public class BeanRegistroPersona implements Serializable {
 	
 	public String almaceneDatosPersona() throws SQLException{
         int perfil = 2;
-        String respuesta= "";
         ControllerPersona controller =new ControllerPersona();
-        try {
-        	controller.enviaDatoEstudiante(id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
-        	respuesta = "RegCor";
-        	
-        }catch(Exception e) {
-        	e.printStackTrace();
-        	respuesta = "no";
-        	
-        }
-      
         
+       String respuesta = controller.enviaDatoEstudiante
+    		   (id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
+             	          
 		return respuesta;
     }
+	
+	public String almacenarPersona() {
+		 int perfil = 2;
+		ControllerPersona controller =new ControllerPersona();
+		String respuesta = controller.agregarPersona(id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
+		clear();
+		return respuesta;
+	}
+	
+	public void clear(){
+	    setNombre(null);
+	    setApellido(null);
+	    setDoc_identidad(null);
+	    setCorreo_electronico(null);
+	    setClave(null);
+	    
+	}//end clear`
+	
 	
 	public ArrayList<Persona> listaPersona() throws SQLException{
         ControllerPersona controller =new ControllerPersona();

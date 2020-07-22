@@ -28,16 +28,16 @@
  	</navigation-case>
  </navigation-rule>
  <navigation-rule>
- 	<display-name>RegistroCorrecto.xhtml</display-name>
- 	<from-view-id>/RegistroCorrecto.xhtml</from-view-id>
+ 	<display-name>registrarUsuario.xhtml</display-name>
+ 	<from-view-id>/registrarUsuario.xhtml</from-view-id>
  	<navigation-case>
  		<from-outcome>RegCor</from-outcome>
- 		<to-view-id>/registrarUsuario.xhtml</to-view-id>
+ 		<to-view-id>/RegistroCorrecto.xhtml</to-view-id>
  	</navigation-case>
  </navigation-rule>
  <navigation-rule>
- 	<display-name>RegistroCorrecto.xhtml</display-name>
- 	<from-view-id>/RegistroCorrecto.xhtml</from-view-id>
+ 	<display-name>registrarUsuario.xhtml</display-name>
+ 	<from-view-id>/registrarUsuario.xhtml</from-view-id>
  	<navigation-case>
  		<from-outcome>no</from-outcome>
  		<to-view-id>/Error.xhtml</to-view-id>

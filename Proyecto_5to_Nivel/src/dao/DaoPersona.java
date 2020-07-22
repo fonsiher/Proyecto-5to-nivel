@@ -1,6 +1,7 @@
 package dao;
 
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -54,5 +55,43 @@ public class DaoPersona {
 	        return this.FindAllPersonas();
 	        
 	    }
+	 
+	 
+		public String RegistrarUsuario(int id_persona,String nombre, String apellido, String doc_identidad, String correo, String clave, int id_tipo) {
+			String result = "";
+			Cls_conexion cl = new Cls_conexion();
+			PreparedStatement pr = null;
+			String sql = "INSERT INTO persona(nombre, apellido, doc_identidad, correo_electronico, clave, id_tipo)";
+			sql += "VALUES(?,?,?,?,?,?)";
+			try {
+				pr = cl.getConexion().prepareStatement(sql);
+				pr.setString(1, nombre);
+				pr.setString(2, apellido);
+				pr.setString(3, doc_identidad);
+				pr.setString(4, correo);
+				pr.setString(5, clave);
+				pr.setInt(6, 2);
+				
+				
+				if (pr.executeUpdate() == 1) {
+					result = "RegCor";
+				} else {
+					result = "no";
+				}
+			} catch (Exception ex) {
+				result = ex.getMessage();
+			} finally {
+				try {
+					pr.close();
+					cl.getConexion().close();
+				} catch (Exception ex) {
+					result = ex.getMessage();
+				}
+			}
+
+			return result;
+		}
+		
+		
 
 	 }
