@@ -75,7 +75,7 @@
 				<h:column>
 					<f:facet name="header">Eliminar</f:facet>
 					<h:commandButton
-						action="#{beanIngresoEstudiante.EliminarDatosEstudiante(listarAlumnos)}"
+						actionListener="#{beanRegistroPersona.EliminarDatosPersona(listarUsuarios.clave)}"
 						value="Eliminar" />
 				</h:column>
 			</h:dataTable>

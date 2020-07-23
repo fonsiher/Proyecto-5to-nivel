@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 	<head>
 
@@ -34,31 +35,40 @@
 			</nav>
 		</center>
 	</div>
-	<form action="VerificarIniciarSesion.jsp" method="post">
+	<h:form>
 		<div class="login-box">
-			<img src="imagenes/sin.png" class="avatar animated infinite pulse faster" alt="Avatar Image" />
-				<h1 class="animated infinite zoomIn slower">Agregar Nuevo Usuario</h1> 
-				<label for="name">Nombre</label> 
-				<input type="text" name="nombre" placeholder="Ingrese el Nombre" /> 
-				<label for="lastname">Apellido</label>
-				<input type="text" name="apellido" placeholder="Ingrese el Apellido" />
-				<label for="ci">Cedula</label> 
-				<input type="text" name="cedula" placeholder="Ingrese la Cedula" /> 
-				<label for="username">Correo</label> 
-				<input type="text" name="usuario" placeholder="Ingrese el Usuario" /> 
-				<label for="password">Clave</label>
-				<input type="password" name="clave" placeholder="Ingrese la Contraseña" />
-				<label for="passwordconf">Confirmar Clave</label>
-				<input type="password" name="clave" placeholder="Confirme la Contraseña" />  
-					<input type="submit" value="Guardar" /> 
-					<a href="MenuAdministrador.xhtml">Volver al Menú</a>
+			<img src="imagenes/sin.png"
+				class="avatar animated infinite pulse faster" alt="Avatar Image" />
+			<h1 class="animated infinite zoomIn slower">Agregar Usuario</h1>
+			<label for="name">Nombre</label>
+			<h:inputText type="text" id="nombre"
+				value="#{beanRegistroPersona.nombre}"
+				pt:placeholder="Ingrese el Nombre"></h:inputText>
+			<label for="lastname">Apellido</label>
+			<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}"
+				pt:placeholder="Ingrese el Apellido"></h:inputText>
+			<label for="ci">Cedula</label>
+			<h:inputText id="doc_identidad"
+				value="#{beanRegistroPersona.doc_identidad}"
+				pt:placeholder="Ingrese la Cedula"></h:inputText>
+			<label for="username">Correo</label>
+			<h:inputText id="correo_electronico"
+				value="#{beanRegistroPersona.correo_electronico}"
+				pt:placeholder="Ingrese el Correo"></h:inputText>
+			<label for="password">Clave</label>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
+				pt:placeholder="Ingrese Clave"></h:inputSecret>
+			<label for="passwordconf">Confirmar Clave</label>
+			<h:inputSecret id="clave2" value="#"
+				pt:placeholder="Confirme la contraseña"></h:inputSecret>
+			<h:commandButton value="Guardar"
+				action="#{beanRegistroPersona.addPersona()}">
+			</h:commandButton>
+			
+			<a href="MenuAdministrador.xhtml">Menú Principal</a>
 		</div>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
-	</form>
+	</h:form>
+	
 		<div id="pie" class="footer">
 		<b>Data Report EC 2020</b>
 		<img src="imagenes/licencia.png" align="top"

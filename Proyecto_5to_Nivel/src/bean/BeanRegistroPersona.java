@@ -9,6 +9,7 @@ import control.ControllerPersona;
 import model.Persona;
 
 
+
 @Named(value="beanRegistroPersona")
 @SessionScoped
 public class BeanRegistroPersona implements Serializable {
@@ -113,6 +114,20 @@ public class BeanRegistroPersona implements Serializable {
 		return respuesta;
 	}
 	
+	public String addPersona() {
+		 int perfil = 2;
+		 String r2="";
+		ControllerPersona controller =new ControllerPersona();
+		String respuesta = controller.agregarPersona(id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
+		clear();
+		if(respuesta == "RegCor")
+			r2="AddCor";
+		return r2;
+	}
+	
+	
+	
+	
 	public void clear(){
 	    setNombre(null);
 	    setApellido(null);
@@ -135,6 +150,21 @@ public class BeanRegistroPersona implements Serializable {
     public String irMenu(){
     return "menuadmin";
     } 
+    
+    public String irLogin() {
+    	return "login";
+    }
+    
+    public String irRegistro() {
+    	return "volReg";
+    }
+    
+    public String EliminarDatosPersona(String cedula) {
+        
+       ControllerPersona controller =new ControllerPersona();
+       String respuesta = controller.eliminarPersona(cedula);
+       return respuesta;
+    }
 	
 	
 }
