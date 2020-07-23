@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import model.Cls_conexion;
 import model.Persona;
 
+
 public class DaoPersona {
 
 	public ArrayList<Persona> FindAllPersonas() throws SQLException {
@@ -90,13 +91,13 @@ public class DaoPersona {
 		return result;
 	}
 
-	public String eliminarEst(String cedula) {
+	public String eliminarPer(Persona persona) {
 		String result = "";
 		PreparedStatement st = null;
 		Cls_conexion cl = new Cls_conexion();
 		try {
-			st = cl.getConexion().prepareStatement("delete from alumnos where cedula = ? ");
-			st.setString(1, cedula);
+			st = cl.getConexion().prepareStatement("delete from persona where cedula = ? ");
+			st.setString(1, persona.getDoc_identidad());
 			if (st.executeUpdate() == 1) {
 				result = "eliminado";
 			} else {
@@ -116,5 +117,32 @@ public class DaoPersona {
 		return result;
 
 	}
+	
+    public void modificarPer(Persona persona) throws SQLException {
+
+        Cls_conexion cl = new Cls_conexion();
+        PreparedStatement st = cl.getConexion().prepareStatement("UPDATE persona SET clave = ? where cedula = ? ");
+        st.setString(1, persona.getClave());
+        st.setString(2, persona.getDoc_identidad());
+        st.executeUpdate();
+
+    }
+    
+    
+    public Persona LeerID(Persona persona) throws Exception {
+
+        Persona per = new Persona();
+        ResultSet re;
+        Cls_conexion cl = new Cls_conexion();
+        re = cl.consulta("select * from persona where cedula = '" + persona.getDoc_identidad() + "'");
+
+        while (re.next()) {
+
+            per.setDoc_identidad(re.getString("doc_identidad"));
+            per.setClave(re.getString("clave"));
+            per.setCorreo_electronico(re.getString("correo_electronico"));
+        }
+        return per;
+    }
 
 }

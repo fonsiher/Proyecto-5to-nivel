@@ -69,13 +69,14 @@
                         </h:column>
 				<h:column>
 					<f:facet name="header">Editar</f:facet>
+					<h:commandButton action="#{beanRegistroPersona.leerId(listarUsuarios)}" value="Modificar" />
 					
-					<h:link value="Editar" outcome="editar_user" />
+				<!-- <h:link value="Editar" outcome="editar_user" /> -->	
 				</h:column>
 				<h:column>
 					<f:facet name="header">Eliminar</f:facet>
 					<h:commandButton
-						actionListener="#{beanRegistroPersona.EliminarDatosPersona(listarUsuarios.clave)}"
+						actionListener="#{beanRegistroPersona.EliminarDatosPersona(listarUsuarios)}"
 						value="Eliminar" />
 				</h:column>
 			</h:dataTable>

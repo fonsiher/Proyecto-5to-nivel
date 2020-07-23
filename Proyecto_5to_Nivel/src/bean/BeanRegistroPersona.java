@@ -10,25 +10,25 @@ import model.Persona;
 
 
 
-@Named(value="beanRegistroPersona")
+@Named(value = "beanRegistroPersona")
 @SessionScoped
 public class BeanRegistroPersona implements Serializable {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private int id_persona;
 	private String nombre;
-    private String apellido;
-    private String doc_identidad;
-    private String correo_electronico;
-    private String clave;
-    private int id_tipo;
-    private Persona persona = new Persona();
-	
-	public BeanRegistroPersona () {
-		
+	private String apellido;
+	private String doc_identidad;
+	private String correo_electronico;
+	private String clave;
+	private int id_tipo;
+	private Persona persona = new Persona();
+
+	public BeanRegistroPersona() {
+
 	}
 
 	public int getId_persona() {
@@ -95,76 +95,92 @@ public class BeanRegistroPersona implements Serializable {
 		this.persona = persona;
 	}
 
-	
-	public String almaceneDatosPersona() throws SQLException{
-        int perfil = 2;
-        ControllerPersona controller =new ControllerPersona();
-        
-       String respuesta = controller.enviaDatoEstudiante
-    		   (id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
-             	          
+	public String almaceneDatosPersona() throws SQLException {
+		int perfil = 2;
+		ControllerPersona controller = new ControllerPersona();
+
+		String respuesta = controller.enviaDatoEstudiante(id_persona, nombre, apellido, doc_identidad,
+				correo_electronico, clave, perfil);
+
 		return respuesta;
-    }
-	
+	}
+
 	public String almacenarPersona() {
-		 int perfil = 2;
-		ControllerPersona controller =new ControllerPersona();
-		String respuesta = controller.agregarPersona(id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
+		int perfil = 2;
+		ControllerPersona controller = new ControllerPersona();
+		String respuesta = controller.agregarPersona(id_persona, nombre, apellido, doc_identidad, correo_electronico,
+				clave, perfil);
 		clear();
 		return respuesta;
 	}
-	
+
 	public String addPersona() {
-		 int perfil = 2;
-		 String r2="";
-		ControllerPersona controller =new ControllerPersona();
-		String respuesta = controller.agregarPersona(id_persona,nombre,apellido,doc_identidad,correo_electronico,clave,perfil);
+		int perfil = 2;
+		String r2 = "";
+		ControllerPersona controller = new ControllerPersona();
+		String respuesta = controller.agregarPersona(id_persona, nombre, apellido, doc_identidad, correo_electronico,
+				clave, perfil);
 		clear();
-		if(respuesta == "RegCor")
-			r2="AddCor";
+		if (respuesta == "RegCor")
+			r2 = "AddCor";
 		return r2;
 	}
-	
-	
-	
-	
-	public void clear(){
-	    setNombre(null);
-	    setApellido(null);
-	    setDoc_identidad(null);
-	    setCorreo_electronico(null);
-	    setClave(null);
-	    
-	}//end clear`
-	
-	
-	public ArrayList<Persona> listaPersona() throws SQLException{
-        ControllerPersona controller =new ControllerPersona();
-        return controller.ImprimePersona();
-   }
-	
-    public String irEdicion(){
-    return "editar_user";
-    } 
-    
-    public String irMenu(){
-    return "menuadmin";
-    } 
-    
-    public String irLogin() {
-    	return "login";
-    }
-    
-    public String irRegistro() {
-    	return "volReg";
-    }
-    
-    public String EliminarDatosPersona(String cedula) {
+
+	public void clear() {
+		setNombre(null);
+		setApellido(null);
+		setDoc_identidad(null);
+		setCorreo_electronico(null);
+		setClave(null);
+
+	}// end clear`
+
+	public ArrayList<Persona> listaPersona() throws SQLException {
+		ControllerPersona controller = new ControllerPersona();
+		return controller.ImprimePersona();
+	}
+
+	public String irEdicion() {
+		return "editar_user";
+	}
+
+	public String irMenu() {
+		return "menuadmin";
+	}
+
+	public String irLogin() {
+		return "login";
+	}
+
+	public String irRegistro() {
+		return "volReg";
+	}
+
+    public void EliminarDatosPersona(Persona persona) throws SQLException{
         
-       ControllerPersona controller =new ControllerPersona();
-       String respuesta = controller.eliminarPersona(cedula);
-       return respuesta;
+    	ControllerPersona controller = new ControllerPersona();
+        controller.eliminarPersona(persona);
+       
     }
+
+	public void ModificaDatosPersona() throws SQLException {
+
+		ControllerPersona controller = new ControllerPersona();
+		controller.modificarPersona(persona);
+
+	}
 	
-	
+	public String leerId(Persona persona) throws Exception {
+	      
+		ControllerPersona controller = new ControllerPersona();
+        Persona per;
+        
+        per = controller.leerIDPersona(persona);
+        
+        if (per != null) {
+            this.persona = per;
+        }
+        return "editar_user";
+    }
+
 }

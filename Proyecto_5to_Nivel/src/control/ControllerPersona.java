@@ -8,6 +8,8 @@ import dao.DaoPersona;
 import model.Persona;
 
 
+
+
 public class ControllerPersona {
 
 	public String enviaDatoEstudiante(int id_persona, String nombre, String apellido, String doc_identidad,
@@ -32,13 +34,19 @@ public class ControllerPersona {
 		return respuesta;
 	}
 
-	public String eliminarPersona(String cedula)  {
+	public String eliminarPersona(Persona persona)  {
 
 		DaoPersona daoalumno = new DaoPersona();
-		String respuesta = daoalumno.eliminarEst(cedula);
+		String respuesta = daoalumno.eliminarPer(persona);
 		return respuesta;
 		
 	}
+	
+    public void modificarPersona(Persona persona)throws SQLException{
+        
+        DaoPersona daoAlumno = new DaoPersona();
+        daoAlumno.modificarPer(persona);   
+    }
 	
 	
 
@@ -52,5 +60,11 @@ public class ControllerPersona {
 		daoalumno = new DaoPersona();
 		return daoalumno.FindAllPersonas();
 	}
+	
+public Persona leerIDPersona(Persona persona) throws Exception{
+        
+        DaoPersona daoAlumno = new DaoPersona();
+        return daoAlumno.LeerID(persona);                
+    }
 
 }
