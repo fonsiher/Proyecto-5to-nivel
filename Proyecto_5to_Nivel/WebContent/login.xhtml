@@ -3,7 +3,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.prime.com.tr/ui">
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 	<title>Iniciar Sesión</title>
 	<link rel="stylesheet" href="../estilos/login.css" type="text/css" />
@@ -32,19 +33,26 @@
 			</nav>
 		</center>
 	</div>
-	<form action="MenuAdministrador.xhtml" method="post">
+	<h:form >
 		<div class="login-box">
 			<img src="imagenes/sin.png"
 				class="avatar animated infinite pulse faster" alt="Avatar Image" />
 			<h1 class="animated infinite zoomIn slower">Iniciar Sesion</h1>
-			<label for="username">Correo</label> <input type="text"
-				name="usuario" placeholder="Ingrese el Usuario" /> <label
-				for="password">Clave</label> <input type="password" name="clave"
-				placeholder="Ingrese la Contraseña" />
-			<h:commandButton value="Iniciar Sesión" action="#{beanRegistroPersona.irMenu()}" />
+			<label for="username">Correo</label>
+
+			<h:inputText id="usuario"
+				value="#{beanRegistroPersona.correo_electronico}"
+				pt:placeholder="Ingrese el Correo" required="true"></h:inputText>
+
+			<label for="password">Clave</label>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
+				pt:placeholder="Ingrese su Clave" required="true"></h:inputSecret>
+
+			<h:commandButton value="Iniciar Sesión"
+				action="#{beanRegistroPersona.ingresoAlSistema()}" />
 			<a href="index.xhtml">Página Principal</a>
 		</div>
-	</form>
+	</h:form>
 	<div id="pie" class="footer">
 		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
 			align="top" style="width: 90px; height: 25px;" /> <a

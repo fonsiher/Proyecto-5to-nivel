@@ -134,11 +134,27 @@ public class BeanRegistroPersona implements Serializable {
 		setClave(null);
 
 	}// end clear`
+	
+	public void clearLogin() {
+		
+		setCorreo_electronico(null);
+		setClave(null);
+
+	}
+	
+	
 
 	public ArrayList<Persona> listaPersona() throws SQLException {
 		ControllerPersona controller = new ControllerPersona();
 		return controller.ImprimePersona();
 	}
+	
+	/*public ArrayList<Persona> listaCedula() throws SQLException {
+		ControllerPersona controller = new ControllerPersona();
+		return controller.ImprimeCedula();
+	}
+	*/
+	
 
 	public String irEdicion() {
 		return "editar_user";
@@ -181,6 +197,34 @@ public class BeanRegistroPersona implements Serializable {
             this.persona = per;
         }
         return "editar_user";
+    }
+	
+	public String ingresoAlSistema() throws SQLException {
+		ControllerPersona controller = new ControllerPersona();
+
+        int valor = controller.login(correo_electronico, clave);
+
+        if (valor != 0) {
+
+            if (valor == 1) {
+            	clearLogin();
+                return "" + valor;
+                
+
+            }
+
+            if (valor == 2) {
+            	clearLogin();
+                return "" + valor;
+            }
+
+            
+        } else {
+        	clearLogin();
+            return "no";
+        }
+        clearLogin();
+        return "no";
     }
 
 }

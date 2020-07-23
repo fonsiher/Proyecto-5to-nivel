@@ -35,6 +35,11 @@ public class Persona implements Serializable {
     	this.clave=clave;
     	this.id_tipo = id_tipo;
     }
+    
+    public Persona(String cedula) {
+    	this.doc_identidad = cedula;
+    	
+    }
 
     
 	public int getId_persona() {

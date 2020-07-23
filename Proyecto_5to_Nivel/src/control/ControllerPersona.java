@@ -8,8 +8,6 @@ import dao.DaoPersona;
 import model.Persona;
 
 
-
-
 public class ControllerPersona {
 
 	public String enviaDatoEstudiante(int id_persona, String nombre, String apellido, String doc_identidad,
@@ -34,21 +32,19 @@ public class ControllerPersona {
 		return respuesta;
 	}
 
-	public String eliminarPersona(Persona persona)  {
+	public String eliminarPersona(Persona persona) {
 
 		DaoPersona daoalumno = new DaoPersona();
 		String respuesta = daoalumno.eliminarPer(persona);
 		return respuesta;
-		
+
 	}
-	
-    public void modificarPersona(Persona persona)throws SQLException{
-        
-        DaoPersona daoAlumno = new DaoPersona();
-        daoAlumno.modificarPer(persona);   
-    }
-	
-	
+
+	public void modificarPersona(Persona persona) throws SQLException {
+
+		DaoPersona daoAlumno = new DaoPersona();
+		daoAlumno.modificarPer(persona);
+	}
 
 	public void forward() throws IOException {
 		String uri = "destination.xhtml";
@@ -60,11 +56,26 @@ public class ControllerPersona {
 		daoalumno = new DaoPersona();
 		return daoalumno.FindAllPersonas();
 	}
-	
-public Persona leerIDPersona(Persona persona) throws Exception{
-        
-        DaoPersona daoAlumno = new DaoPersona();
-        return daoAlumno.LeerID(persona);                
-    }
+
+	/*
+	 * public ArrayList<Persona> ImprimeCedula() throws SQLException { DaoPersona
+	 * daoalumno; daoalumno = new DaoPersona(); return daoalumno.FindAllCedulas(); }
+	 */
+
+	public Persona leerIDPersona(Persona persona) throws Exception {
+
+		DaoPersona daoAlumno = new DaoPersona();
+		return daoAlumno.LeerID(persona);
+	}
+
+	public int login(String user, String pass) throws SQLException {
+		DaoPersona daouser = new DaoPersona();
+		for (Persona u : daouser.FindAllPersonas()) {
+			if (u.getCorreo_electronico().equals(user) && u.getClave().equals(pass)) {
+				return u.getId_tipo();
+			}
+		}
+		return 0;
+	}
 
 }

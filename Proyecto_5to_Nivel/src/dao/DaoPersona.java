@@ -144,5 +144,27 @@ public class DaoPersona {
         }
         return per;
     }
+    
+    
+ /*   public ArrayList<Persona> FindAllCedulas() throws SQLException {
+		ArrayList<Persona> persona = new ArrayList<>();
+
+		ResultSet re;
+		Cls_conexion cl = new Cls_conexion();
+		re = cl.consulta("select cedula,clave from persona");
+		
+		String doc_identidad;
+		
+		
+		while (re.next()) {
+			
+			doc_identidad = re.getString(1);
+			
+			
+			persona.add(new Persona(doc_identidad));
+		}
+		return persona;
+	} */
+    
 
 }
