@@ -3,7 +3,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 <head>
 
 <title>Registro</title>
@@ -43,7 +44,7 @@
 				class="avatar animated infinite pulse faster" alt="Avatar Image" />
 			<h1 class="animated infinite zoomIn slower">Registrar Usuario</h1>
 			<label for="name">Nombre</label>
-			<h:inputText type="text" id="nombre"
+			<h:inputText type="text" id="nombre" 
 				value="#{beanRegistroPersona.nombre}"
 				pt:placeholder="Ingrese el Nombre" required="true" ></h:inputText>
 				<h:message for="nombre" style="color:red; font-family:Comic-Sans" />
@@ -52,25 +53,29 @@
 				pt:placeholder="Ingrese el Apellido" required="true"></h:inputText>
 				<h:message for="apellido" style="color:red; font-family:Comic-Sans" />
 			<label for="ci">Cedula</label>
-			<h:inputText id="doc_identidad"
+			<h:inputText id="doc_identidad" a:type="number" pt:min="1" pt:pattern="^[0-9]+"
 				value="#{beanRegistroPersona.doc_identidad}"
 				pt:placeholder="Ingrese la Cedula" required="true">
 				<f:validateLength minimum="10" maximum="10" />
-				</h:inputText>
+				</h:inputText>		
 				<h:message for="doc_identidad" style="color:red; font-family:Comic-Sans" />
+				
+				
 			<label for="username">Correo</label>
-			<h:inputText id="correo_electronico"
+			<h:inputText id="correo_electronico"  
 				value="#{beanRegistroPersona.correo_electronico}"
 				pt:placeholder="Ingrese el Correo" required="true">
 				<f:validateRegex pattern=".+[@].+[.].+" />
 				</h:inputText>
 				<h:message for="correo_electronico" style="color:red; font-family:Comic-Sans" />
 			<label for="password">Clave</label>
-			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}" 
 				pt:placeholder="Ingrese Clave" required="true"></h:inputSecret>
+				<h:message for="clave" style="color:red; font-family:Comic-Sans" />
 			<label for="passwordconf">Confirmar Clave</label>
 			<h:inputSecret id="clave2" value="#"
-				pt:placeholder="Confirme la contraseña" required="true"></h:inputSecret>
+				pt:placeholder="Confirme la contraseña" required="true" ></h:inputSecret>
+				<h:message for="clave2" style="color:red; font-family:Comic-Sans" />
 			<h:commandButton value="Guardar"
 				action="#{beanRegistroPersona.almacenarPersona()}">
 			</h:commandButton>

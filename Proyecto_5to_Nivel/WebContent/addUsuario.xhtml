@@ -43,24 +43,35 @@
 			<label for="name">Nombre</label>
 			<h:inputText type="text" id="nombre"
 				value="#{beanRegistroPersona.nombre}"
-				pt:placeholder="Ingrese el Nombre"></h:inputText>
+				pt:placeholder="Ingrese el Nombre" required="true" ></h:inputText>
+				<h:message for="nombre" style="color:red; font-family:Comic-Sans" />
 			<label for="lastname">Apellido</label>
 			<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}"
-				pt:placeholder="Ingrese el Apellido"></h:inputText>
+				pt:placeholder="Ingrese el Apellido" required="true"></h:inputText>
+				<h:message for="apellido" style="color:red; font-family:Comic-Sans" />
 			<label for="ci">Cedula</label>
-			<h:inputText id="doc_identidad"
+			<h:inputText id="doc_identidad" pt:type="number" pt:min="1" pt:pattern="^[0-9]+"
 				value="#{beanRegistroPersona.doc_identidad}"
-				pt:placeholder="Ingrese la Cedula"></h:inputText>
+				pt:placeholder="Ingrese la Cedula" required="true">
+				<f:validateLength minimum="10" maximum="10" />
+				</h:inputText>		
+				<h:message for="doc_identidad" style="color:red; font-family:Comic-Sans" />
+								
 			<label for="username">Correo</label>
-			<h:inputText id="correo_electronico"
+			<h:inputText id="correo_electronico"  
 				value="#{beanRegistroPersona.correo_electronico}"
-				pt:placeholder="Ingrese el Correo"></h:inputText>
+				pt:placeholder="Ingrese el Correo" required="true">
+				<f:validateRegex pattern=".+[@].+[.].+" />
+				</h:inputText>
+				<h:message for="correo_electronico" style="color:red; font-family:Comic-Sans" />
 			<label for="password">Clave</label>
-			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
-				pt:placeholder="Ingrese Clave"></h:inputSecret>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}" 
+				pt:placeholder="Ingrese Clave" required="true"></h:inputSecret>
+				<h:message for="clave" style="color:red; font-family:Comic-Sans" />
 			<label for="passwordconf">Confirmar Clave</label>
 			<h:inputSecret id="clave2" value="#"
-				pt:placeholder="Confirme la contraseña"></h:inputSecret>
+				pt:placeholder="Confirme la contraseña" required="true" ></h:inputSecret>
+				<h:message for="clave2" style="color:red; font-family:Comic-Sans" />
 			<h:commandButton value="Guardar"
 				action="#{beanRegistroPersona.addPersona()}">
 			</h:commandButton>
