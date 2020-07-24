@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import control.ControllerPersona;
 import model.Persona;
@@ -205,11 +206,10 @@ public class BeanRegistroPersona implements Serializable {
         int valor = controller.login(correo_electronico, clave);
 
         if (valor != 0) {
-
+        	        	
             if (valor == 1) {
             	clearLogin();
-                return "" + valor;
-                
+                return "" + valor;           
 
             }
 
