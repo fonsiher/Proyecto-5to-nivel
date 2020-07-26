@@ -1,16 +1,13 @@
 package model;
 
-import java.io.Serializable;
+
 import java.util.Date;
 
-import javax.faces.bean.ViewScoped;
-import javax.inject.Named;
 
-@Named(value="provincia")
-@ViewScoped
-public class Provincia implements Serializable {
+
+
+public class Provincia {
 	
-	private static final long serialVersionUID = 1L;
 	private int sk_provincia;
 	private int pk_provincia;
 	private String provincia;

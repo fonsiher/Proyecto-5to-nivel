@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<link rel="StyleSheet" href="estilos/estilo.css" type="text/css" />
+<title>Reportes Cronológicos</title>
+</head>
+<body>
+	<div id="cabecera" class="cabecera">
+		<img style="width: 280px; height: 140px;" src="imagenes/logo.png"
+			align="left" />
+		<div style="height: 80px;">
+			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
+		</div>
+		<center>
+			<nav>
+			<ul>
+				<li><a href="MenuUsuario.xhtml">MENU PRINCIPAL</a></li>
+
+				<li><a href="cambioContra.xhtml">ACTUALIZAR CONTRASEÑA</a></li>
+
+				<li><a href="menuReportes.xhtml">VER REPORTES</a></li>
+
+				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
+			</ul>
+			</nav>
+		</center>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+
+	<div align="center">
+		<h3>
+			<b>Escoja las Opciones</b>
+		</h3>
+		
+		<p>
+			<img style="width: 280px; height: 150px;"
+				src="imagenes/calendario.jpg" align="center"/>
+		</p>
+
+		<table>
+			<tr>
+
+				<td><h3>Mes:</h3></td>
+				<td><h3>Año de Inicio de Búsqueda:</h3></td>
+				<td><h3>Años de Fin de Búsqueda:</h3></td>
+
+			</tr>
+
+			<tr>
+
+				<td><h:selectOneMenu value="#{beanFecha.nombre_mes}">
+						<f:selectItem itemValue="#{null}"
+							itemLabel="-- Seleccione el Mes  " />
+						<f:selectItems value="#{beanFecha.listaMeses()}"></f:selectItems>
+					</h:selectOneMenu> <br /></td>
+
+				<td><h:selectOneMenu value="#{beanFecha.anio}">
+						<f:selectItem itemValue="#{null}"
+							itemLabel="-- Seleccione el Año de Inicio  " />
+						<f:selectItems value="#{beanFecha.listaAnios()}"></f:selectItems>
+					</h:selectOneMenu><br /></td>
+				<td><h:selectOneMenu value="#{beanFecha.anio}">
+						<f:selectItem itemValue="#{null}"
+							itemLabel="-- Seleccione el Año de Fin de Búsqueda " />
+						<f:selectItems value="#{beanFecha.listaAnios()}"></f:selectItems>
+					</h:selectOneMenu><br /></td>
+
+			</tr>
+
+		</table>
+		<br />
+		<h:commandButton value="Enviar" action="result" />
+
+		<br /> <br />
+		<p align="center">
+			<a href="menuReportes.xhtml"><h4>Volver al Menú de Reportes</h4></a>
+		</p>
+
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<div id="pie" class="footer">
+		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
+			align="top" style="width: 90px; height: 25px;" /> <a
+			href="repositorio.xhtml">Más Información</a> <br /> <b>Licencia:
+		</b>CC-BY-NC-SA <b> Autores:</b> por: Richard Camacho - Edwin Hernández -
+		Alisson Vizcaíno.
+	</div>
+</body>
+
+
+
+</html>

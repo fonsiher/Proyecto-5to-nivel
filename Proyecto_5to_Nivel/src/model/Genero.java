@@ -1,16 +1,11 @@
 package model;
 
-import java.io.Serializable;
+
 import java.util.Date;
 
-import javax.faces.bean.ViewScoped;
-import javax.inject.Named;
 
-@Named(value="genero")
-@ViewScoped
-public class Genero implements Serializable {
+public class Genero {
 	
-	private static final long serialVersionUID = 1L;
 	private int sk_genero;
 	private int pk_genero;
 	private String genero;

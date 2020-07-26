@@ -1,16 +1,14 @@
 package model;
 
-import java.io.Serializable;
+
 import java.util.Date;
 
-import javax.faces.bean.ViewScoped;
-import javax.inject.Named;
 
-@Named(value="area")
-@ViewScoped
-public class Area implements Serializable {
+
+
+public class Area {
 	
-	private static final long serialVersionUID = 1L;
+	
 	private int sk_area;
 	private int pk_area;
 	private String area;
