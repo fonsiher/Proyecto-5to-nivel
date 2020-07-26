@@ -1,17 +1,14 @@
 package model;
 
-import java.io.Serializable;
+
 import java.util.Date;
 
-import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ViewScoped;
-import javax.inject.Named;
 
-@Named(value="etnia")
-@ViewScoped
 
-public class Etnia implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+
+public class Etnia  {
+	
 	private int sk_etnia;
 	private int pk_etnia;
 	private String etnia;

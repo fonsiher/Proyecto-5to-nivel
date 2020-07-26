@@ -2,15 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.prime.com.tr/ui">
+	xmlns:h="http://java.sun.com/jsf/html">
 <head>
 <link rel="StyleSheet" href="estilos/estilo.css" type="text/css" />
-<title>Reportes Características</title>
+<title>Reportes por Geografía</title>
 <script>
 	function habilitar(value) {
-		var isChecked1 = document.getElementById('genxanio').checked;
-		var isChecked2 = document.getElementById('etxanio').checked;
+		var isChecked1 = document.getElementById('pxanio').checked;
+		var isChecked2 = document.getElementById('pxarea').checked;
 		if(isChecked1){
 			showTable1();
 			hideTable2();
@@ -76,33 +75,33 @@
 
 
 
-	<div align="center" >
+	<div align="center">
 		<h3>
 			<b>Escoja una de las Opciones según la consulta que desea realizar</b>
 		</h3>
 
-		<input type="radio" id="genxanio" name="age" 
-			onchange="habilitar(this.value);" /> <label for="genxanio">Género
-			por Años</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input
-			type="radio" id="etxanio" name="age" 
-			onchange="habilitar(this.value);" /> <label for="etxanio">Etnia
-			por Años</label> 
+		<input type="radio" id="pxanio" name="age" value="30" onchange="habilitar(this.value);"/> <label
+			for="pxanio">Provincia por Años</label>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
+			id="pxarea" name="age" value="60" onchange="habilitar(this.value);" /> <label for="pxarea">Área
+			por Provincia</label><br /> 
+
 		<table>
 			<tr>
-				<td><img style="width: 250px; height: 150px;"
-					src="imagenes/genero.jpg" align="center" /></td>
+				<td><img style="width: 228px; height: 150px;"
+					src="imagenes/mapaEC.png" align="center" /></td>
 
-				<td><img style="width: 250px; height: 150px;"
-					src="imagenes/etnias.jpg" align="center" /></td>
+				<td><img style="width: 240px; height: 150px;"
+					src="imagenes/area.png" align="center" /></td>
+				
 			</tr>
 		</table>
 
 		<br /> 
-
 		<table id="table1">
 			<tr>
 
-				<td><h3>Género:</h3></td>
+				<td><h3>Provincia:</h3></td>
 				<td><h3>Año de Inicio de Búsqueda:</h3></td>
 				<td><h3>Años de Fin de Búsqueda:</h3></td>
 
@@ -110,10 +109,10 @@
 
 			<tr>
 
-				<td><h:selectOneMenu value="#{beanGenero.genero}">
+				<td><h:selectOneMenu value="#{beanProvincia.provincia}">
 						<f:selectItem itemValue="#{null}"
-							itemLabel="-- Seleccione el Genero" />
-						<f:selectItems value="#{beanGenero.listaGeneros()}"></f:selectItems>
+							itemLabel="-- Seleccione la Provincia" />
+						<f:selectItems value="#{beanProvincia.listaProvincias()}"></f:selectItems>
 					</h:selectOneMenu> <br /></td>
 
 				<td><h:selectOneMenu value="#{beanFecha.anio}">
@@ -128,51 +127,46 @@
 					</h:selectOneMenu><br /></td>
 
 			</tr>
-			<tr>
-				<td colspan="3"><h:commandButton value="Enviar" action="result" />
-				</td>
-
+			<tr >
+			<td colspan="3">
+			<h:commandButton value="Enviar" action="result" />
+			</td>
+			
 			</tr>
 
 		</table>
+
 		<table id="table2">
 			<tr>
 
-				<td><h3>Etnia:</h3></td>
-				<td><h3>Año de Inicio de Búsqueda:</h3></td>
-				<td><h3>Años de Fin de Búsqueda:</h3></td>
-
+				<td><h3>Provincia:</h3></td>
+				<td><h3>Área:</h3></td>
 			</tr>
-
 			<tr>
 
-				<td><h:selectOneMenu value="#{beanEtnia.etnia}">
+				<td><h:selectOneMenu value="#{beanProvincia.provincia}">
 						<f:selectItem itemValue="#{null}"
-							itemLabel="-- Seleccione la Etnia" />
-						<f:selectItems value="#{beanEtnia.listaEtnias()}"></f:selectItems>
+							itemLabel="-- Seleccione la Provincia" />
+						<f:selectItems value="#{beanProvincia.listaProvincias()}"></f:selectItems>
 					</h:selectOneMenu> <br /></td>
 
-				<td><h:selectOneMenu value="#{beanFecha.anio}">
+				<td><h:selectOneMenu value="#{beanArea.area}">
 						<f:selectItem itemValue="#{null}"
-							itemLabel="-- Seleccione el Año de Inicio  " />
-						<f:selectItems value="#{beanFecha.listaAnios()}"></f:selectItems>
-					</h:selectOneMenu><br /></td>
-				<td><h:selectOneMenu value="#{beanFecha.anio}">
-						<f:selectItem itemValue="#{null}"
-							itemLabel="-- Seleccione el Año de Fin de Búsqueda " />
-						<f:selectItems value="#{beanFecha.listaAnios()}"></f:selectItems>
-					</h:selectOneMenu><br /></td>
-
+							itemLabel="-- Seleccione Area Geográfica" />
+						<f:selectItems value="#{beanArea.listaAreas()}"></f:selectItems>
+					</h:selectOneMenu><br /></td>		
 			</tr>
-			<tr>
-				<td colspan="3"><h:commandButton value="Enviar" action="result" />
-				</td>
-
+			
+			<tr >
+			<td colspan="3">
+			<h:commandButton value="Enviar" action="result" />
+			</td>
+			
 			</tr>
 
 		</table>
 
-		<br />
+
 		<p align="center">
 			<a href="menuReportes.xhtml"><h4>Volver al Menú de Reportes</h4></a>
 		</p>
@@ -181,7 +175,7 @@
 	<br />
 	<br />
 	<br />
-	<br />
+
 
 	<div id="pie" class="footer">
 		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
@@ -191,5 +185,7 @@
 		Alisson Vizcaíno.
 	</div>
 </body>
+
+
 
 </html>
