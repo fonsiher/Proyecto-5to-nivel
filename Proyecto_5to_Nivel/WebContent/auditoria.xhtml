@@ -4,8 +4,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 <head>
-<link rel="StyleSheet" href="estilos/estilo.css" type="text/css" />
-<title>Licencia</title>
+<link rel="StyleSheet" href="estilos/listadoUsuarios.css"
+	type="text/css" />
+<title>Información Auditoría</title>
 
 </head>
 <body>
@@ -35,60 +36,49 @@
 
 		<br></br> <br></br>
 
-		<table style="width: 75%;" cellspacing="1" cellpadding="3" border="1"
-			bgcolor="#1E679A">
+		<div align="center">
+			<h3>Información de Auditoría de la Aplicación</h3>
+		</div>
+		<h:dataTable id="auditoria" value="#{beanAuditoria.listaAuditoria()}"
+			var="listarAuditoria" border="1">
+			<h:column>
+				<f:facet name="header">Tabla</f:facet>    				
+                                #{listarAuditoria.tabla_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Operación</f:facet>    				
+                                #{listarAuditoria.operacion_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Valor Anterior</f:facet>    				
+                                #{listarAuditoria.valoranterior_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Valor Nuevo</f:facet>    				
+                                #{listarAuditoria.valornuevo_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Fecha Auditoría</f:facet>    				
+                                #{listarAuditoria.fecha_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Usuario</f:facet>    				
+                                #{listarAuditoria.usuario_aud}
+                        </h:column>
+			<h:column>
+				<f:facet name="header">Esquema</f:facet>    				
+                                #{listarAuditoria.esquema_aud}
+                        </h:column>
 
-			<caption align="top">
-				<h3>Registro de acciones en la aplicación</h3>
-			</caption>
-
-			<tr>
-				<td><b>ID</b></td>
-				<td><b>Tabla</b></td>
-				<td><b>Operación</b></td>
-				<td><b>Valor Anterior</b></td>
-				<td><b>Valor Nuevo</b></td>
-				<td><b>Fecha</b></td>
-				<td><b>Usuario</b></td>
-			</tr>
-
-			<tr>
-				<td>1</td>
-				<td>tb_usuario</td>
-				<td>Update</td>
-				<td>1234</td>
-				<td>cambio123</td>
-				<td>2020-07-13</td>
-				<td>María Moya</td>
-			</tr>
-
-			<tr>
-				<td>2</td>
-				<td>tb_area</td>
-				<td>Insert</td>
-				<td></td>
-				<td>No asignada</td>
-				<td>2020-07-13</td>
-				<td>Edwin Hernández</td>
-			</tr>
-
-			<tr>
-				<td>3</td>
-				<td>Persona</td>
-				<td>Delete</td>
-				<td>Juan Perez</td>
-				<td></td>
-				<td>2020-07-13</td>
-				<td>Edwin Hernández</td>
-			</tr>
-		</table>
-
+		</h:dataTable>
 	</div>
 	<br></br>
 	<br></br>
 
 	<div align="center">
-		<a href="MenuAdministrador.xhtml"><button><h3>Volver al Inicio</h3></button></a>
+		<a href="MenuAdministrador.xhtml"><button>
+				<h3>Volver al Inicio</h3>
+			</button></a>
 	</div>
 	<br />
 	<br />
