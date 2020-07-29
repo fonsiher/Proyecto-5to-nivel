@@ -1,11 +1,13 @@
 package bean;
 
 import java.io.Serializable;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import control.ControllerPersona;
+import model.Cls_conexion;
 import model.Persona;
 
 
@@ -225,5 +227,31 @@ public class BeanRegistroPersona implements Serializable {
         clearLogin();
         return "no";
     }
+	public String eliminarPer(String ced) {
+		String result = "";
+		PreparedStatement st = null;
+		Cls_conexion cl = new Cls_conexion();
+		try {
 
+			st = cl.getConexion().prepareStatement("delete from persona where doc_identidad = ? ");
+			st.setString(1, ced);
+if (st.executeUpdate() == 1) {
+				result = "eliminado";
+			} else {
+				result = "noelim";
+			}
+		} catch (Exception ex) {
+
+			result = ex.getMessage();
+		} finally {
+			try {
+				st.close();
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				result = ex.getMessage();
+			}
+		}
+		return result;
+
+	}
 }

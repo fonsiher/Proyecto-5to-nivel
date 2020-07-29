@@ -96,7 +96,7 @@ public class DaoPersona {
 		PreparedStatement st = null;
 		Cls_conexion cl = new Cls_conexion();
 		try {
-			st = cl.getConexion().prepareStatement("delete from persona where cedula = ? ");
+			st = cl.getConexion().prepareStatement("delete from persona where doc_identidad = ? ");
 			st.setString(1, persona.getDoc_identidad());
 			if (st.executeUpdate() == 1) {
 				result = "eliminado";
