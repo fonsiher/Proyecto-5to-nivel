@@ -4,6 +4,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import javax.faces.model.SelectItem;
+
 import model.Cls_conexion;
 import model.Provincia;
 
@@ -57,6 +61,33 @@ public class DaoProvincia {
 			}
 		}
 		return lista_provincias;
+	}
+	
+	public List<SelectItem> obtenerProvincias()	{
+		Cls_conexion cl = new Cls_conexion();
+		List<SelectItem> lista=new ArrayList<>();
+		lista.add(new SelectItem(null, "Seleccione"));
+		try {
+			ResultSet re;
+			re = cl.consulta("select * from dim_provincia");
+			
+			while (re.next()) {
+				lista.add(new SelectItem(re.getInt(1),re.getString(3)));
+			}
+			
+			
+		}catch(Exception e) {
+			System.out.println(e);
+			
+		}finally {
+			try {
+				
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				ex.getMessage();
+			}
+		}
+		return lista;
 	}
 
 }

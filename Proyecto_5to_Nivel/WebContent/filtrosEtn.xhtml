@@ -7,7 +7,7 @@
 <h:head>
 	<link rel="StyleSheet" href="estilos/listadoUsuarios.css"
 		type="text/css" />
-	<title>Filtros Cronológicos</title>
+	<title>Étnia Vs Año</title>
 </h:head>
 
 <h:body>
@@ -17,7 +17,7 @@
 		<div style="height: 80px;">
 			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
 		</div>
-				<center>
+		<center>
 			<nav>
 			<ul>
 				<li><a href="MenuUsuario.xhtml">MENU PRINCIPAL</a></li>
@@ -39,17 +39,17 @@
 		<p:panel header="Filtros de busqueda">
 			<p:panelGrid>
 				<p:row>
-					<p:column>Seleccione Mes:</p:column>
+					<p:column>Seleccione Étnia:</p:column>
 					<p:column>
-						<p:selectOneMenu id="somMes" required="true"
-							value="#{graficosControl.codMes}">
-							<f:selectItems value="#{graficosControl.listaMes}" />
+						<p:selectOneMenu id="somEtnia" required="true"
+							value="#{graficosControl.codEtnia}">
+							<f:selectItems value="#{graficosControl.listaEtnia}" />
 						</p:selectOneMenu>
-						<p:message for="somMes" />
+						<p:message for="somEtnia" />
 					</p:column>
 				</p:row>
 				<p:row>
-					<p:column>Año Inicial:</p:column>
+					<p:column>Año Inicial de Búsqueda:</p:column>
 					<p:column>
 						<p:selectOneMenu id="somAnio1" required="true"
 							value="#{graficosControl.anio1}">
@@ -59,7 +59,7 @@
 					</p:column>
 				</p:row>
 				<p:row>
-					<p:column>Año Final:</p:column>
+					<p:column>Año Final de Búsqueda:</p:column>
 					<p:column>
 						<p:selectOneMenu id="somAnio2" required="true"
 							value="#{graficosControl.anio2}">
@@ -71,7 +71,7 @@
 				<p:row>
 					<p:column colspan="2">
 						<p:commandButton icon="ui-icon-search" title="Buscar"
-							value="Buscar" actionListener="#{graficosControl.buscarCron()}"
+							value="Buscar" actionListener="#{graficosControl.buscarEtnia()}"
 							process="@form" update=":frmResultado,:frmFiltro" />
 					</p:column>
 				</p:row>
@@ -84,9 +84,9 @@
 	<h:form id="frmResultado">
 		<p:panel header="Resultado">
 			<h:outputText value="#{graficosControl.resultado}" />
-			<p:dataTable rows="8" paginator="true" paginatorPosition="bottom"
-				value="#{graficosControl.reportecron}" var="rep">
-				<p:column headerText="Mes">
+			<p:dataTable rows="5" paginator="true" paginatorPosition="bottom"
+				value="#{graficosControl.reporteetnia}" var="rep">
+				<p:column headerText="Étnia">
 					<h:outputText value="#{rep.datos}" />
 				</p:column>
 				<p:column headerText="Número de personas">
@@ -95,9 +95,9 @@
 			</p:dataTable>
 			
 			<div align="center">
-				<p:chart type="bar" model="#{graficosControl.barra}"
-					style="width:1200px;height:790px"
-					rendered="#{graficosControl.barra != null}" />
+				<p:chart type="pie" model="#{graficosControl.torta2}"
+					style="width:800px;height:500px"
+					rendered="#{graficosControl.torta2 != null}" />
 			</div>
 
 		</p:panel>
@@ -111,12 +111,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 	<a href="graficoPrvsAr.xhtml"><button>
 			<h4>Descargar en Formato de Reporte</h4>
 		</button></a>  &nbsp;&nbsp;&nbsp;&nbsp;
 
+		<a href="reportCar.xhtml"><button>
+			<h4>Regresar a Filtros por Características</h4>
+		</button></a> &nbsp;&nbsp;&nbsp;&nbsp;
 		
 		<a href="menuReportes.xhtml"><button>
 			<h4>Regresar al Menú de Reportes</h4>
