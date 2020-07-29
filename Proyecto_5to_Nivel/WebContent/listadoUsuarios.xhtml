@@ -40,6 +40,7 @@
 			<div align="center">
 				<h1>Listado de Usuarios</h1>
 			</div>
+			<h:form>
 			<h:dataTable id="personas"
 				value="#{beanRegistroPersona.listaPersona()}" var="listarUsuarios"
 				border="1">
@@ -67,6 +68,7 @@
 					<f:facet name="header">Tipo</f:facet>    				
                                 #{listarUsuarios.id_tipo}
                         </h:column>
+                        
 				<h:column>
 					<f:facet name="header">Editar</f:facet>
 					<h:commandButton action="#{beanRegistroPersona.leerId(listarUsuarios)}" value="Modificar" />
@@ -76,10 +78,11 @@
 				<h:column>
 					<f:facet name="header">Eliminar</f:facet>
 					<h:commandButton
-						actionListener="#{beanRegistroPersona.EliminarDatosPersona(listarUsuarios)}"
+						actionListener="#{beanRegistroPersona.eliminarPer(listarUsuarios.doc_identidad)}"
 						value="Eliminar" />
 				</h:column>
 			</h:dataTable>
+			</h:form>
 	</div>
 	<br></br>
 	<br></br>
