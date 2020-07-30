@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import javax.faces.model.SelectItem;
 
 import model.Cls_conexion;
 import model.Etnia;
@@ -50,6 +53,33 @@ public class DaoEtnia {
 		}catch(Exception e) {
 			System.out.println(e);
 			
+		}
+		return lista_etnias;
+	}
+	
+	public List<SelectItem> obtenerEtnias() {
+		List<SelectItem> lista_etnias = new ArrayList<>();
+		lista_etnias.add(new SelectItem(null, "Seleccione"));
+		Cls_conexion cl = new Cls_conexion();
+		try {
+			ResultSet re;
+			re = cl.consulta("select * from dim_etnia");
+
+			while (re.next()) {
+				lista_etnias.add(new SelectItem(re.getInt(1), re.getString(3)));
+			}
+			lista_etnias.add(new SelectItem(10,"TODAS LAS ETNIAS"));
+
+		} catch (Exception e) {
+			System.out.println(e);
+
+		} finally {
+			try {
+
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				ex.getMessage();
+			}
 		}
 		return lista_etnias;
 	}

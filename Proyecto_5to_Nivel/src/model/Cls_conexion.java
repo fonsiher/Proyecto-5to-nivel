@@ -5,8 +5,6 @@
  */
 package model;
 import java.sql.*;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 
 public final class Cls_conexion {
 
@@ -44,8 +42,8 @@ public final class Cls_conexion {
 		
 		this.driver ="org.postgresql.Driver";
 		this.user="postgres";
-		this.pwd="RC2301";
-		this.cadena="jdbc:postgresql://localhost:5432/Dimensional_Final";
+		this.pwd="sololdu";
+		this.cadena="jdbc:postgresql://localhost:5432/Dimensional_Nacimientos";
 		this.con=this.crearConexion();
 		
 	}
@@ -108,6 +106,14 @@ public final class Cls_conexion {
 	return(reg);
 
 	
+	}
+	
+	public void cerrarConexion() {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
     // }
 }
