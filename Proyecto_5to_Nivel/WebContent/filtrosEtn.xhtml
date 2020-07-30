@@ -39,7 +39,7 @@
 		<p:panel header="Filtros de busqueda">
 			<p:panelGrid>
 				<p:row>
-					<p:column>Seleccione Étnia:</p:column>
+					<p:column>Seleccione Etnia:</p:column>
 					<p:column>
 						<p:selectOneMenu id="somEtnia" required="true"
 							value="#{graficosControl.codEtnia}">
@@ -86,7 +86,7 @@
 			<h:outputText value="#{graficosControl.resultado}" />
 			<p:dataTable rows="5" paginator="true" paginatorPosition="bottom"
 				value="#{graficosControl.reporteetnia}" var="rep">
-				<p:column headerText="Étnia">
+				<p:column headerText="Etnia">
 					<h:outputText value="#{rep.datos}" />
 				</p:column>
 				<p:column headerText="Número de personas">
