@@ -21,12 +21,13 @@ public class Persona implements Serializable {
     private String correo_electronico;
     private String clave;
     private int id_tipo;
+    private String descripcion;
     
     public Persona() {
     	
     }
     
-    public Persona(int id_persona,String nombre, String apellido, String doc_identidad, String correo, String clave, int id_tipo) {
+    public Persona(int id_persona,String nombre, String apellido, String doc_identidad, String correo, String clave, int id_tipo, String descripcion) {
     	this.id_persona = id_persona;
     	this.nombre= nombre;
     	this.apellido = apellido;
@@ -34,6 +35,7 @@ public class Persona implements Serializable {
     	this.correo_electronico = correo;
     	this.clave=clave;
     	this.id_tipo = id_tipo;
+    	this.descripcion = descripcion;
     }
     
     public Persona(String cedula) {
@@ -96,5 +98,13 @@ public class Persona implements Serializable {
 
 	public void setId_tipo(int id_tipo) {
 		this.id_tipo = id_tipo;
+	}
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 }

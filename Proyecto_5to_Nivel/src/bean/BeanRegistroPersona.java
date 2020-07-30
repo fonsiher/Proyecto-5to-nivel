@@ -27,6 +27,7 @@ public class BeanRegistroPersona implements Serializable {
 	private String correo_electronico;
 	private String clave;
 	private int id_tipo;
+	private String descripcion;
 	private String temp;
 	private Persona persona = new Persona();
 
@@ -102,6 +103,14 @@ public class BeanRegistroPersona implements Serializable {
 		return persona;
 	}
 
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	public void setPersona(Persona persona) {
 		this.persona = persona;
 	}
@@ -111,7 +120,7 @@ public class BeanRegistroPersona implements Serializable {
 		ControllerPersona controller = new ControllerPersona();
 
 		String respuesta = controller.enviaDatoEstudiante(id_persona, nombre, apellido, doc_identidad,
-				correo_electronico, clave, perfil);
+				correo_electronico, clave, perfil, descripcion);
 
 		return respuesta;
 	}
