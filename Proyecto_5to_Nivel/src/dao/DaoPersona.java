@@ -162,7 +162,7 @@ public class DaoPersona {
         Persona per = new Persona();
         ResultSet re;
         Cls_conexion cl = new Cls_conexion();
-        re = cl.consulta("select * from persona where cedula = '" + persona.getDoc_identidad() + "'");
+        re = cl.consulta("select * from public.persona where cedula = '" + persona.getDoc_identidad() + "'");
 
         while (re.next()) {
 

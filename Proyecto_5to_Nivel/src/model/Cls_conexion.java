@@ -42,7 +42,7 @@ public final class Cls_conexion {
 		
 		this.driver ="org.postgresql.Driver";
 		this.user="postgres";
-		this.pwd="sololdu";
+		this.pwd="RC2301";
 		this.cadena="jdbc:postgresql://localhost:5432/Dimensional_Nacimientos";
 		this.con=this.crearConexion();
 		
