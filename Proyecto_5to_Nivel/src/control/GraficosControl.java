@@ -143,7 +143,7 @@ public class GraficosControl implements Serializable {
 			torta2.set(dr.getDatos(), dr.getContador());
 		}
 
-		torta2.setTitle("Étnia vs Años");
+		torta2.setTitle("Etnia vs Años");
 		torta2.setLegendPosition("e");
 		torta2.setFill(true);
 		torta2.setShowDataLabels(true);
