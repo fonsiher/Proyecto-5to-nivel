@@ -27,6 +27,7 @@ public class BeanRegistroPersona implements Serializable {
 	private String correo_electronico;
 	private String clave;
 	private int id_tipo;
+	private String temp;
 	private Persona persona = new Persona();
 
 	public BeanRegistroPersona() {
@@ -87,6 +88,14 @@ public class BeanRegistroPersona implements Serializable {
 
 	public void setId_tipo(int id_tipo) {
 		this.id_tipo = id_tipo;
+	}
+	
+	public String getTemp() {
+		return temp;
+	}
+
+	public String setTemp(String temp) {
+		return this.temp = temp;
 	}
 
 	public Persona getPersona() {
@@ -232,16 +241,14 @@ public class BeanRegistroPersona implements Serializable {
 		PreparedStatement st = null;
 		Cls_conexion cl = new Cls_conexion();
 		try {
-
-			st = cl.getConexion().prepareStatement("delete from persona where doc_identidad = ? ");
+			st = cl.getConexion().prepareStatement("delete from persona where doc_identidad = ?");
 			st.setString(1, ced);
-if (st.executeUpdate() == 1) {
+			if (st.executeUpdate() == 1) {
 				result = "eliminado";
 			} else {
 				result = "noelim";
 			}
 		} catch (Exception ex) {
-
 			result = ex.getMessage();
 		} finally {
 			try {
@@ -253,5 +260,59 @@ if (st.executeUpdate() == 1) {
 		}
 		return result;
 
+	}
+	
+	public String ingr(String cedu) {
+		temp=setTemp(cedu);
+		return "cambioContra.xhtml";
+	}
+	
+	public String almCedu() {
+		ControllerPersona controller = new ControllerPersona();
+		String respuesta = controller.mclave(clave, temp);
+		clear();
+		return respuesta;
+	}
+	
+	public String ind() {
+		return "listadoUsuarios.xhtml";
+	}
+	/*
+    public void modificarPer() throws SQLException {
+    	
+        Cls_conexion cl = new Cls_conexion();
+        PreparedStatement st = cl.getConexion().prepareStatement("UPDATE persona SET clave = ? where doc_identidad = ? ");
+        st.setString(1, clave);
+        st.setString(2, temp);
+        st.executeUpdate();
+        
+    }*/
+    
+    public String modificarPer() {
+		String result = "";
+		Cls_conexion cl = new Cls_conexion();
+		PreparedStatement pr = null;
+		String sql = "UPDATE persona SET clave = ? where doc_identidad = ? ";
+		try {
+			pr = cl.getConexion().prepareStatement(sql);
+			pr.setString(1, clave);
+			pr.setString(2, temp);
+			if (pr.executeUpdate() == 1) {
+				result = "listadoUsuarios.xhtml";
+			} else {
+				result = "listadoUsuarios.xhtml";
+			}
+		} catch (Exception ex) {
+			result = ex.getMessage();
+		} finally {
+			try {
+				pr.close();
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				result = ex.getMessage();
+			}
+		}
+
+		return result;
 	}
 }

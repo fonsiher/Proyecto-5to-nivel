@@ -90,6 +90,34 @@ public class DaoPersona {
 
 		return result;
 	}
+	
+	public String actClave(String clave, String cedd) {
+		String result = "";
+		Cls_conexion cl = new Cls_conexion();
+		PreparedStatement pr = null;
+		String sql = "UPDATE persona SET clave = ? where doc_identidad = ? ";
+		try {
+			pr = cl.getConexion().prepareStatement(sql);
+			pr.setString(1, clave);
+			pr.setString(2, cedd);
+			if (pr.executeUpdate() == 1) {
+				result = "";
+			} else {
+				result = "";
+			}
+		} catch (Exception ex) {
+			result = ex.getMessage();
+		} finally {
+			try {
+				pr.close();
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				result = ex.getMessage();
+			}
+		}
+
+		return result;
+	}
 
 	public String eliminarPer(Persona persona) {
 		String result = "";
@@ -121,7 +149,7 @@ public class DaoPersona {
     public void modificarPer(Persona persona) throws SQLException {
 
         Cls_conexion cl = new Cls_conexion();
-        PreparedStatement st = cl.getConexion().prepareStatement("UPDATE persona SET clave = ? where cedula = ? ");
+        PreparedStatement st = cl.getConexion().prepareStatement("UPDATE persona SET clave = ? where doc_identidad = ? ");
         st.setString(1, persona.getClave());
         st.setString(2, persona.getDoc_identidad());
         st.executeUpdate();

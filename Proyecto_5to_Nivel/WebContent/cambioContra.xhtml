@@ -31,7 +31,7 @@
 			</nav>
 		</center>
 	</div>
-	<form>
+	<h:form>
 		<div class="login-box">
 			<img src="imagenes/sin.png"
 				class="avatar animated infinite pulse faster" alt="Avatar Image" />
@@ -39,16 +39,18 @@
 			<label for="vpassword">Ingrese la Contraseña Actual</label> <input
 				type="password" name="vclave" placeholder="Ultima Clave" /> <label
 				for="npassword">Ingrese la Nueva Clave</label>
-			<h:inputSecret id="clave" value="#{beanRegistroPersona.persona.clave}"
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
 				pt:placeholder="Ingrese Clave"></h:inputSecret>
 			<label for="passwordconf">Confirmar Clave</label> 
-			<h:inputSecret id="clave2" value="#"
-				pt:placeholder="Confirme la contraseña"></h:inputSecret>			
-			<h:commandButton value="Modificar" action="#{beanRegistroPersona.ModificaDatosPersona()}"></h:commandButton>
+<input
+				type="password" name="vclave" placeholder="Confirme la Clave" />
 				<br></br>
 				<a href="listadoUsuarios.xhtml">Volver</a>
+				<h:commandButton value="Guardar"
+				action="#{beanRegistroPersona.modificarPer()}">
+			</h:commandButton>
 		</div>
-	</form>
+	</h:form>
 
 	<div id="pie" class="footer">
 		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"

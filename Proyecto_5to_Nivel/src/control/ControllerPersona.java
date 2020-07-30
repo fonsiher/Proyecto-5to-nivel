@@ -31,7 +31,13 @@ public class ControllerPersona {
 				id_tipo);
 		return respuesta;
 	}
-
+	
+	public String mclave(String clave, String cedd) {
+		DaoPersona daoAlumno = new DaoPersona();
+		String respuesta = daoAlumno.actClave(clave, cedd);
+		return respuesta;
+	}
+	
 	public String eliminarPersona(Persona persona) {
 
 		DaoPersona daoalumno = new DaoPersona();
