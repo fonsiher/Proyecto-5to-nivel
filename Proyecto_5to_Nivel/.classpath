@@ -15,5 +15,22 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-9.1-901.jdbc3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-8.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/classic-core-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/classic-extensions-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itext-2.1.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libbase-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libdocbundle-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libfonts-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libformat-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libformula-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libloader-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/librepository-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libserializer-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libsparkline-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libswing-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/libxml-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/pentaho-platform-core-7.1.0.0-12.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/pentaho-platform-extensions-7.1.0.0-12.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

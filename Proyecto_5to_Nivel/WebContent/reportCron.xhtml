@@ -17,15 +17,15 @@
 		<div style="height: 80px;">
 			Data Report EC<br /> Estadística de Nacimientos en el Ecuador<br />
 		</div>
-				<center>
+		<center>
 			<nav>
 			<ul>
 				<li><a href="MenuUsuario.xhtml">MENÚ PRINCIPAL</a></li>
-				
+
 				<li><a href="cambioContraUser.xhtml">ACTUALIZAR CONTRASEÑA</a></li>
-				
+
 				<li><a href="menuReportes.xhtml">VER REPORTES</a></li>
-				
+
 				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
 			</ul>
 			</nav>
@@ -34,53 +34,53 @@
 	<br />
 	<br />
 	<div align="center">
-	
-	<h:form id="frmFiltro">
-		<p:panel header="Filtros de busqueda">
-			<p:panelGrid>
-				<p:row>
-					<p:column>Seleccione Mes:</p:column>
-					<p:column>
-						<p:selectOneMenu id="somMes" required="true"
-							value="#{graficosControl.codMes}">
-							<f:selectItems value="#{graficosControl.listaMes}" />
-						</p:selectOneMenu>
-						<p:message for="somMes" />
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Año Inicial:</p:column>
-					<p:column>
-						<p:selectOneMenu id="somAnio1" required="true"
-							value="#{graficosControl.anio1}">
-							<f:selectItems value="#{graficosControl.listaAnios}" />
-						</p:selectOneMenu>
-						<p:message for="somAnio1" />
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Año Final:</p:column>
-					<p:column>
-						<p:selectOneMenu id="somAnio2" required="true"
-							value="#{graficosControl.anio2}">
-							<f:selectItems value="#{graficosControl.listaAnios}" />
-						</p:selectOneMenu>
-						<p:message for="somAnio2" />
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column colspan="2">
-						<p:commandButton icon="ui-icon-search" title="Buscar"
-							value="Buscar" actionListener="#{graficosControl.buscarCron()}"
-							process="@form" update=":frmResultado,:frmFiltro" />
-					</p:column>
-				</p:row>
-			</p:panelGrid>
-		</p:panel>
-	</h:form>
-	
+
+		<h:form id="frmFiltro">
+			<p:panel header="Filtros de busqueda">
+				<p:panelGrid>
+					<p:row>
+						<p:column>Seleccione Mes:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somMes" required="true"
+								value="#{graficosControl.codMes}">
+								<f:selectItems value="#{graficosControl.listaMes}" />
+							</p:selectOneMenu>
+							<p:message for="somMes" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Año Inicial:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somAnio1" required="true"
+								value="#{graficosControl.anio1}">
+								<f:selectItems value="#{graficosControl.listaAnios}" />
+							</p:selectOneMenu>
+							<p:message for="somAnio1" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Año Final:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somAnio2" required="true"
+								value="#{graficosControl.anio2}">
+								<f:selectItems value="#{graficosControl.listaAnios}" />
+							</p:selectOneMenu>
+							<p:message for="somAnio2" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<p:commandButton icon="ui-icon-search" title="Buscar"
+								value="Buscar" actionListener="#{graficosControl.buscarCron()}"
+								process="@form" update=":frmResultado,:frmFiltro" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+
 	</div>
-	
+
 	<h:form id="frmResultado">
 		<p:panel header="Resultado">
 			<h:outputText value="#{graficosControl.resultado}" />
@@ -93,7 +93,7 @@
 					<h:outputText value="#{rep.contador}" />
 				</p:column>
 			</p:dataTable>
-			
+
 			<div align="center">
 				<p:chart type="bar" model="#{graficosControl.barra}"
 					style="width:1200px;height:790px"
@@ -103,26 +103,42 @@
 		</p:panel>
 
 	</h:form>
-		<br />
+	<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-	<a href="graficoPrvsAr.xhtml"><button>
-			<h4>Descargar en Formato de Reporte</h4>
-		</button></a>  &nbsp;&nbsp;&nbsp;&nbsp;
 
+
+	<a href=""> <p:commandButton type="button"
+			class="boton" value="Descargar Reporte Total en Gráfico de Barras" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
 		
-		<a href="menuReportes.xhtml"><button>
-			<h4>Regresar al Menú de Reportes</h4>
-		</button></a>
+	<a href="TodosAniosxMes"> <p:commandButton type="button"
+			class="boton" value="Descargar Reporte Textual detallado por Año" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+<br />
 	<br />
-	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+	<a href="menuReportes.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar al Menú de Reportes" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
 	<br />
 	<br />
 	<div id="pie" class="footer">

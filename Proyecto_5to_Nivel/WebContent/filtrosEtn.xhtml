@@ -21,11 +21,11 @@
 			<nav>
 			<ul>
 				<li><a href="MenuUsuario.xhtml">MENU PRINCIPAL</a></li>
-				
+
 				<li><a href="cambioContraUser.xhtml">ACTUALIZAR CONTRASEÑA</a></li>
-				
+
 				<li><a href="menuReportes.xhtml">VER REPORTES</a></li>
-				
+
 				<li><a href="login.xhtml">CERRAR SESIÓN</a></li>
 			</ul>
 			</nav>
@@ -34,53 +34,53 @@
 	<br />
 	<br />
 	<div align="center">
-	
-	<h:form id="frmFiltro">
-		<p:panel header="Filtros de busqueda">
-			<p:panelGrid>
-				<p:row>
-					<p:column>Seleccione Etnia:</p:column>
-					<p:column>
-						<p:selectOneMenu id="somEtnia" required="true"
-							value="#{graficosControl.codEtnia}">
-							<f:selectItems value="#{graficosControl.listaEtnia}" />
-						</p:selectOneMenu>
-						<p:message for="somEtnia" />
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Año Inicial de Búsqueda:</p:column>
-					<p:column>
-						<p:selectOneMenu id="somAnio1" required="true"
-							value="#{graficosControl.anio1}">
-							<f:selectItems value="#{graficosControl.listaAnios}" />
-						</p:selectOneMenu>
-						<p:message for="somAnio1" />
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column>Año Final de Búsqueda:</p:column>
-					<p:column>
-						<p:selectOneMenu id="somAnio2" required="true"
-							value="#{graficosControl.anio2}">
-							<f:selectItems value="#{graficosControl.listaAnios}" />
-						</p:selectOneMenu>
-						<p:message for="somAnio2" />
-					</p:column>
-				</p:row>
-				<p:row>
-					<p:column colspan="2">
-						<p:commandButton icon="ui-icon-search" title="Buscar"
-							value="Buscar" actionListener="#{graficosControl.buscarEtnia()}"
-							process="@form" update=":frmResultado,:frmFiltro" />
-					</p:column>
-				</p:row>
-			</p:panelGrid>
-		</p:panel>
-	</h:form>
-	
+
+		<h:form id="frmFiltro">
+			<p:panel header="Filtros de busqueda">
+				<p:panelGrid>
+					<p:row>
+						<p:column>Seleccione Etnia:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somEtnia" required="true"
+								value="#{graficosControl.codEtnia}">
+								<f:selectItems value="#{graficosControl.listaEtnia}" />
+							</p:selectOneMenu>
+							<p:message for="somEtnia" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Año Inicial de Búsqueda:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somAnio1" required="true"
+								value="#{graficosControl.anio1}">
+								<f:selectItems value="#{graficosControl.listaAnios}" />
+							</p:selectOneMenu>
+							<p:message for="somAnio1" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>Año Final de Búsqueda:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somAnio2" required="true"
+								value="#{graficosControl.anio2}">
+								<f:selectItems value="#{graficosControl.listaAnios}" />
+							</p:selectOneMenu>
+							<p:message for="somAnio2" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<p:commandButton icon="ui-icon-search" title="Buscar"
+								value="Buscar" actionListener="#{graficosControl.buscarEtnia()}"
+								process="@form" update=":frmResultado,:frmFiltro" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+
 	</div>
-	
+
 	<h:form id="frmResultado">
 		<p:panel header="Resultado">
 			<h:outputText value="#{graficosControl.resultado}" />
@@ -93,7 +93,7 @@
 					<h:outputText value="#{rep.contador}" />
 				</p:column>
 			</p:dataTable>
-			
+
 			<div align="center">
 				<p:chart type="pie" model="#{graficosControl.torta2}"
 					style="width:800px;height:500px"
@@ -103,8 +103,26 @@
 		</p:panel>
 
 	</h:form>
-		<br />
+	<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+
+	<a href="EtniaAnio"> <p:commandButton type="button" class="boton"
+			value="Descargar Reporte Total en Gráfico Pastel" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+		 	<a href="TodosEtniaAnio"> <p:commandButton type="button"
+			class="boton" value="Descargar Reporte Textual detallado por Año" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+
+		<br></br>
+	<br></br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -112,22 +130,19 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="reportCar.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar a Filtros por Características" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
 
-	<a href="graficoPrvsAr.xhtml"><button>
-			<h4>Descargar en Formato de Reporte</h4>
-		</button></a>  &nbsp;&nbsp;&nbsp;&nbsp;
-
-		<a href="reportCar.xhtml"><button>
-			<h4>Regresar a Filtros por Características</h4>
-		</button></a> &nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="menuReportes.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar al Menú de Reportes" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
 		
-		<a href="menuReportes.xhtml"><button>
-			<h4>Regresar al Menú de Reportes</h4>
-		</button></a>
 	<br />
 	<br />
-	<br />
-	<br />
+
 	<div id="pie" class="footer">
 		<b>Data Report EC 2020</b> <img src="imagenes/licencia.png"
 			align="top" style="width: 90px; height: 25px;" /> <a
