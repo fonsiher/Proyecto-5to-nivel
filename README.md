@@ -33,3 +33,15 @@ que contiene el path copiado (Normalmente está creada). Caso contrario agregar 
    <li>En cuanto termine, haz clic derecho en el archivo y escoge “Extraer todo…”. Esto va a crear una carpeta con los archivos de Eclipse. El archivo que tiene el icono con el círculo púrpura es el que abre Eclipse </li>
    <li>Al cargar la aplicación, se abrirá una ventana de dialogo para preguntar tu localización preferida para tu espacio de trabajo, o “workspace”. Esta ubicación es la ubicación de defecto en donde Eclipse creará nuevos archivos y nuevos proyectos. Si no tienes una lugar en mente, continua al hacer clic en “Launch”</li>
   <li>Finalmente, serás bienvenido por un programa que se parece a la siguiente imagen. Este es el entorno de desarrollo de Eclipse.</li>
+  
+## Despliegue 📦
+
+_Agrega notas adicionales sobre como hacer deploy_
+
+## Construido con 🛠️
+
+_Menciona las herramientas que utilizaste para crear tu proyecto_
+
+* [Java Server Faces (JSF)](http://www.javaserverfaces.org/) - Es el marco de interfaz de usuario (UI) orientado a componentes estándar para la plataforma Java EE. En términos que pueden sonar más familiares, es un marco web basado en Java.
+* [PrimeFaces](https://www.primefaces.org/gettingstarted/) - Es un marco de código abierto popular para JavaServer Faces que cuenta con más de 100 componentes, kit móvil optimizado táctil, validación del lado del cliente, motor de temas y más.
+* [CSS](https://www.w3schools.com/css/) - Es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado
