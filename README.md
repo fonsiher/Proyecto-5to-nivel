@@ -40,8 +40,21 @@ _Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 * [Java Server Faces (JSF)](http://www.javaserverfaces.org/) - Es el marco de interfaz de usuario (UI) orientado a componentes estándar para la plataforma Java EE. En términos que pueden sonar más familiares, es un marco web basado en Java.
 * [PrimeFaces](https://www.primefaces.org/gettingstarted/) - Es un marco de código abierto popular para JavaServer Faces que cuenta con más de 100 componentes, kit móvil optimizado táctil, validación del lado del cliente, motor de temas y más.
-* [CSS](https://www.w3schools.com/css/) - Es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado
+* [CSS](https://www.w3schools.com/css/) - Es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.
+
+## Wiki 📖
+
+Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/fonsiher/Proyecto-5to-nivel/wiki)
+
+## Autores ✒️
+
+* **Richard Camacho ** - *Módulo de Seguridad y Reparación de Errores* - [RC2301](https://github.com/RC2301)
+* **Edwin Hernández** - *Diseño de la Aplicación y Módulo de Reportes* - [fonsiher](https://github.com/fonsiher)
+* **Alisson Vizcaíno** - *Documentación y Módulo de Invitado* - [aly9899](https://github.com/aly9899)
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/fonsiher/Proyecto-5to-nivel/graphs/contributors) quíenes han participado en este proyecto. 
+
+## Licencia 📄
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
