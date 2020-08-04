@@ -37,9 +37,9 @@ que contiene el path copiado (Normalmente está creada). Caso contrario agregar 
 <br/>
 <h4>Instalación de Wildfly</h4>
 <ol>
-<li>La instalación de Wildfly es solo una cuestión de descomprimir la distribución en su máquina local. Wildfly puede ser descargado desde su sitio web oficial</li>
-<li>Una vez descomprimido, vaya al directorio bin de instalación y ejecute standalone.sh para sistemas Linux o standalone.bat para sistemas Windows para iniciar su instancia de WildFly en las configuraciones predeterminadas.</li>
-<li>Luego su nueva instancia de WildFly esperando para darle la bienvenida en: http: // localhost: 8080 /</li>
+  <li>La instalación de Wildfly es solo una cuestión de descomprimir la distribución en su máquina local. Wildfly puede ser descargado desde su sitio web oficial</li>
+  <li>Una vez descomprimido, vaya al directorio bin de instalación y ejecute standalone.sh para sistemas Linux o standalone.bat para sistemas Windows para iniciar su instancia de WildFly en las configuraciones predeterminadas.</li>
+  <li>Luego su nueva instancia de WildFly esperando para darle la bienvenida en: http: // localhost: 8080 /</li>
   
 ## Despliegue 📦
 
