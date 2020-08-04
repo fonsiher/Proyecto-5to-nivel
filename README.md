@@ -34,6 +34,13 @@ que contiene el path copiado (Normalmente está creada). Caso contrario agregar 
    <li>Al cargar la aplicación, se abrirá una ventana de dialogo para preguntar tu localización preferida para tu espacio de trabajo, o “workspace”. Esta ubicación es la ubicación de defecto en donde Eclipse creará nuevos archivos y nuevos proyectos. Si no tienes una lugar en mente, continua al hacer clic en “Launch”</li>
   <li>Finalmente, serás bienvenido por un programa que se parece a la siguiente imagen. Este es el entorno de desarrollo de Eclipse.</li>
   
+<br/>
+<h4>Instalación de Wildfly</h4>
+<ol>
+<li>La instalación de Wildfly es solo una cuestión de descomprimir la distribución en su máquina local. Wildfly puede ser descargado desde su sitio web oficial</li>
+<li>Una vez descomprimido, vaya al directorio bin de instalación y ejecute standalone.sh para sistemas Linux o standalone.bat para sistemas Windows para iniciar su instancia de WildFly en las configuraciones predeterminadas.</li>
+<li>Luego su nueva instancia de WildFly esperando para darle la bienvenida en: http: // localhost: 8080 /</li>
+  
 ## Despliegue 📦
 
 Se puede ejecutar directamente desde el IDE Eclipse, y abrirlo en el navegador de preferencia. 
