@@ -36,7 +36,8 @@ que contiene el path copiado (Normalmente está creada). Caso contrario agregar 
   
 ## Despliegue 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+Se puede ejecutar directamente desde el IDE Eclipse, y abrirlo en el navegador de preferencia. 
+O guardar en el proyecto en un **.WAR** y cargarlo a un servidor. 
 
 ## Construido con 🛠️
 
@@ -50,10 +51,10 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](ht
 
 ## Autores ✒️
 
-* **Richard Camacho** - *Indentificación de Errores y Módulo de Seguridad* - [RC2301](https://github.com/RC2301)
+* **Richard Camacho** - *Identificación de Errores y Módulo de Seguridad* - [RC2301](https://github.com/RC2301)
 * **Edwin Hernández** - *Diseño de la Aplicación y Módulo de Reportes* - [fonsiher](https://github.com/fonsiher)
 * **Alisson Vizcaíno** - *Documentación y Módulo de Invitado* - [aly9899](https://github.com/aly9899)
-<br/>
+
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/fonsiher/Proyecto-5to-nivel/graphs/contributors) quíenes han participado en este proyecto. 
 
 ## Licencia 📄
