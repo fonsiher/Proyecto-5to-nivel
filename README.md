@@ -27,7 +27,7 @@ que contiene el path copiado (Normalmente está creada). Caso contrario agregar 
 <br/>
 <h4>Instalación de Eclipse IDE for Enterprise Java Developers</h4>
 <ol>
-<li>Se descarga Eclipse IDE for Enterprise Java Developers de la página oficial de <a href="https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers.">Eclipse Foundation</a>
+<li>Se descarga Visual Studio Code <a href="https://code.visualstudio.com/"> Visual Studio Code </a>
   <li>Después sigue al encontrar la versión de Windows que tu sistema este ejecutando.</li>
   <li>Haz clic en “Download” para descargar el archivo zip y espera a que se acomplete la descarga. </li>
    <li>En cuanto termine, haz clic derecho en el archivo y escoge “Extraer todo…”. Esto va a crear una carpeta con los archivos de Eclipse. El archivo que tiene el icono con el círculo púrpura es el que abre Eclipse </li>
